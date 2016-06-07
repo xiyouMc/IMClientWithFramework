@@ -1,0 +1,102 @@
+[
+    {
+        "outputFile": "C:\\Users\\Administrator\\Desktop\\demo\\Android_ChatRoom_Demo_Src\\IMToolKit\\build\\intermediates\\res\\merged\\debug\\values-en\\values-en.xml",
+        "map": [
+            {
+                "to": {
+                    "startLine": 2,
+                    "startColumn": 4,
+                    "startOffset": 55,
+                    "endColumn": 72,
+                    "endOffset": 123
+                },
+                "from": {
+                    "file": "C:\\Users\\Administrator\\Desktop\\demo\\Android_ChatRoom_Demo_Src\\IMToolKit\\src\\main\\res\\values-en\\rc_lib_string.xml",
+                    "position": {
+                        "startLine": 4,
+                        "startColumn": 4,
+                        "startOffset": 132,
+                        "endColumn": 72,
+                        "endOffset": 200
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 3,
+                    "startColumn": 4,
+                    "startOffset": 128,
+                    "endColumn": 75,
+                    "endOffset": 199
+                },
+                "from": {
+                    "file": "C:\\Users\\Administrator\\Desktop\\demo\\Android_ChatRoom_Demo_Src\\IMToolKit\\src\\main\\res\\values-en\\rc_notification_string.xml",
+                    "position": {
+                        "startLine": 5,
+                        "startColumn": 4,
+                        "startOffset": 136,
+                        "endColumn": 90,
+                        "endOffset": 222
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 4,
+                    "startColumn": 4,
+                    "startOffset": 204,
+                    "endColumn": 91,
+                    "endOffset": 291
+                },
+                "from": {
+                    "file": "C:\\Users\\Administrator\\Desktop\\demo\\Android_ChatRoom_Demo_Src\\IMToolKit\\src\\main\\res\\values-en\\rc_notification_string.xml",
+                    "position": {
+                        "startLine": 6,
+                        "startColumn": 4,
+                        "startOffset": 227,
+                        "endColumn": 111,
+                        "endOffset": 334
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 5,
+                    "startColumn": 4,
+                    "startOffset": 296,
+                    "endColumn": 78,
+                    "endOffset": 370
+                },
+                "from": {
+                    "file": "C:\\Users\\Administrator\\Desktop\\demo\\Android_ChatRoom_Demo_Src\\IMToolKit\\src\\main\\res\\values-en\\rc_notification_string.xml",
+                    "position": {
+                        "startLine": 3,
+                        "startColumn": 4,
+                        "startOffset": 56,
+                        "endColumn": 78,
+                        "endOffset": 130
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 6,
+                    "startColumn": 4,
+                    "startOffset": 375,
+                    "endColumn": 75,
+                    "endOffset": 446
+                },
+                "from": {
+                    "file": "C:\\Users\\Administrator\\Desktop\\demo\\Android_ChatRoom_Demo_Src\\IMToolKit\\src\\main\\res\\values-en\\rc_lib_string.xml",
+                    "position": {
+                        "startLine": 3,
+                        "startColumn": 4,
+                        "startOffset": 56,
+                        "endColumn": 75,
+                        "endOffset": 127
+                    }
+                }
+            }
+        ]
+    }
+]

@@ -1,0 +1,13 @@
+<resources>
+
+    <style name="WarringDialog" parent="android:style/Theme.Dialog">
+        <item name="android:windowBackground">@drawable/dialog_warring_bg</item>
+        <item name="android:windowNoTitle">true</item>
+    </style>
+
+    <style name="WaitingDialog" parent="android:style/Theme.Dialog">
+        <item name="android:windowBackground">@drawable/dialog_waiting_bg</item>
+        <item name="android:windowNoTitle">true</item>
+    </style>
+
+</resources>

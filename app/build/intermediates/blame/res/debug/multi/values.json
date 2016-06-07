@@ -1,0 +1,1079 @@
+[
+    {
+        "outputFile": "C:\\Users\\Administrator\\Desktop\\demo\\Android_ChatRoom_Demo_Src\\app\\build\\intermediates\\res\\merged\\debug\\values\\values.xml",
+        "map": [
+            {
+                "to": {
+                    "startLine": 2,
+                    "startColumn": 4,
+                    "startOffset": 55,
+                    "endLine": 131,
+                    "endColumn": 24,
+                    "endOffset": 4322
+                },
+                "from": {
+                    "file": "C:\\Users\\Administrator\\Desktop\\demo\\Android_ChatRoom_Demo_Src\\app\\build\\intermediates\\exploded-aar\\Android_ChatRoom_Demo_Src\\IMToolKit\\unspecified\\res\\values\\values.xml",
+                    "position": {
+                        "startLine": 2,
+                        "startColumn": 4,
+                        "startOffset": 55,
+                        "endLine": 131,
+                        "endColumn": 24,
+                        "endOffset": 4322
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 132,
+                    "startColumn": 4,
+                    "startOffset": 4327,
+                    "endLine": 261,
+                    "endColumn": 12,
+                    "endOffset": 9213
+                },
+                "from": {
+                    "file": "C:\\Users\\Administrator\\Desktop\\demo\\Android_ChatRoom_Demo_Src\\app\\build\\intermediates\\exploded-aar\\Android_ChatRoom_Demo_Src\\IMToolKit\\unspecified\\res\\values\\values.xml",
+                    "position": {
+                        "startLine": 132,
+                        "startColumn": 4,
+                        "startOffset": 4327,
+                        "endLine": 261,
+                        "endColumn": 12,
+                        "endOffset": 9213
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 262,
+                    "startColumn": 4,
+                    "startOffset": 9218,
+                    "endColumn": 44,
+                    "endOffset": 9258
+                },
+                "from": {
+                    "file": "C:\\Users\\Administrator\\Desktop\\demo\\Android_ChatRoom_Demo_Src\\app\\build\\intermediates\\exploded-aar\\Android_ChatRoom_Demo_Src\\IMToolKit\\unspecified\\res\\values\\values.xml",
+                    "position": {
+                        "startLine": 262,
+                        "startColumn": 4,
+                        "startOffset": 9218,
+                        "endColumn": 44,
+                        "endOffset": 9258
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 263,
+                    "startColumn": 4,
+                    "startOffset": 9263,
+                    "endColumn": 45,
+                    "endOffset": 9304
+                },
+                "from": {
+                    "file": "C:\\Users\\Administrator\\Desktop\\demo\\Android_ChatRoom_Demo_Src\\app\\build\\intermediates\\exploded-aar\\Android_ChatRoom_Demo_Src\\IMToolKit\\unspecified\\res\\values\\values.xml",
+                    "position": {
+                        "startLine": 263,
+                        "startColumn": 4,
+                        "startOffset": 9263,
+                        "endColumn": 45,
+                        "endOffset": 9304
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 264,
+                    "startColumn": 4,
+                    "startOffset": 9309,
+                    "endColumn": 45,
+                    "endOffset": 9350
+                },
+                "from": {
+                    "file": "C:\\Users\\Administrator\\Desktop\\demo\\Android_ChatRoom_Demo_Src\\app\\src\\main\\res\\values\\colors.xml",
+                    "position": {
+                        "startLine": 2,
+                        "startColumn": 4,
+                        "startOffset": 55,
+                        "endColumn": 45,
+                        "endOffset": 96
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 265,
+                    "startColumn": 4,
+                    "startOffset": 9355,
+                    "endColumn": 41,
+                    "endOffset": 9392
+                },
+                "from": {
+                    "file": "C:\\Users\\Administrator\\Desktop\\demo\\Android_ChatRoom_Demo_Src\\app\\src\\main\\res\\values\\colors.xml",
+                    "position": {
+                        "startLine": 3,
+                        "startColumn": 4,
+                        "startOffset": 101,
+                        "endColumn": 41,
+                        "endOffset": 138
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 266,
+                    "startColumn": 4,
+                    "startOffset": 9397,
+                    "endColumn": 44,
+                    "endOffset": 9437
+                },
+                "from": {
+                    "file": "C:\\Users\\Administrator\\Desktop\\demo\\Android_ChatRoom_Demo_Src\\app\\src\\main\\res\\values\\colors.xml",
+                    "position": {
+                        "startLine": 4,
+                        "startColumn": 4,
+                        "startOffset": 143,
+                        "endColumn": 44,
+                        "endOffset": 183
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 267,
+                    "startColumn": 4,
+                    "startOffset": 9442,
+                    "endColumn": 65,
+                    "endOffset": 9503
+                },
+                "from": {
+                    "file": "C:\\Users\\Administrator\\Desktop\\demo\\Android_ChatRoom_Demo_Src\\app\\src\\main\\res\\values\\colors.xml",
+                    "position": {
+                        "startLine": 8,
+                        "startColumn": 4,
+                        "startOffset": 281,
+                        "endColumn": 65,
+                        "endOffset": 342
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 268,
+                    "startColumn": 4,
+                    "startOffset": 9508,
+                    "endColumn": 64,
+                    "endOffset": 9568
+                },
+                "from": {
+                    "file": "C:\\Users\\Administrator\\Desktop\\demo\\Android_ChatRoom_Demo_Src\\app\\src\\main\\res\\values\\colors.xml",
+                    "position": {
+                        "startLine": 7,
+                        "startColumn": 4,
+                        "startOffset": 216,
+                        "endColumn": 64,
+                        "endOffset": 276
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 269,
+                    "startColumn": 4,
+                    "startOffset": 9573,
+                    "endColumn": 49,
+                    "endOffset": 9618
+                },
+                "from": {
+                    "file": "C:\\Users\\Administrator\\Desktop\\demo\\Android_ChatRoom_Demo_Src\\app\\build\\intermediates\\exploded-aar\\Android_ChatRoom_Demo_Src\\IMToolKit\\unspecified\\res\\values\\values.xml",
+                    "position": {
+                        "startLine": 264,
+                        "startColumn": 4,
+                        "startOffset": 9309,
+                        "endColumn": 49,
+                        "endOffset": 9354
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 270,
+                    "startColumn": 4,
+                    "startOffset": 9623,
+                    "endColumn": 48,
+                    "endOffset": 9667
+                },
+                "from": {
+                    "file": "C:\\Users\\Administrator\\Desktop\\demo\\Android_ChatRoom_Demo_Src\\app\\build\\intermediates\\exploded-aar\\Android_ChatRoom_Demo_Src\\IMToolKit\\unspecified\\res\\values\\values.xml",
+                    "position": {
+                        "startLine": 265,
+                        "startColumn": 4,
+                        "startOffset": 9359,
+                        "endColumn": 48,
+                        "endOffset": 9403
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 271,
+                    "startColumn": 4,
+                    "startOffset": 9672,
+                    "endColumn": 93,
+                    "endOffset": 9761
+                },
+                "from": {
+                    "file": "C:\\Users\\Administrator\\Desktop\\demo\\Android_ChatRoom_Demo_Src\\app\\build\\intermediates\\exploded-aar\\Android_ChatRoom_Demo_Src\\IMToolKit\\unspecified\\res\\values\\values.xml",
+                    "position": {
+                        "startLine": 266,
+                        "startColumn": 4,
+                        "startOffset": 9408,
+                        "endColumn": 93,
+                        "endOffset": 9497
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 272,
+                    "startColumn": 4,
+                    "startOffset": 9766,
+                    "endColumn": 60,
+                    "endOffset": 9822
+                },
+                "from": {
+                    "file": "C:\\Users\\Administrator\\Desktop\\demo\\Android_ChatRoom_Demo_Src\\app\\build\\intermediates\\exploded-aar\\Android_ChatRoom_Demo_Src\\IMToolKit\\unspecified\\res\\values\\values.xml",
+                    "position": {
+                        "startLine": 267,
+                        "startColumn": 4,
+                        "startOffset": 9502,
+                        "endColumn": 60,
+                        "endOffset": 9558
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 273,
+                    "startColumn": 4,
+                    "startOffset": 9827,
+                    "endColumn": 55,
+                    "endOffset": 9878
+                },
+                "from": {
+                    "file": "C:\\Users\\Administrator\\Desktop\\demo\\Android_ChatRoom_Demo_Src\\app\\build\\intermediates\\exploded-aar\\Android_ChatRoom_Demo_Src\\IMToolKit\\unspecified\\res\\values\\values.xml",
+                    "position": {
+                        "startLine": 268,
+                        "startColumn": 4,
+                        "startOffset": 9563,
+                        "endColumn": 55,
+                        "endOffset": 9614
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 274,
+                    "startColumn": 4,
+                    "startOffset": 9883,
+                    "endColumn": 63,
+                    "endOffset": 9942
+                },
+                "from": {
+                    "file": "C:\\Users\\Administrator\\Desktop\\demo\\Android_ChatRoom_Demo_Src\\app\\build\\intermediates\\exploded-aar\\Android_ChatRoom_Demo_Src\\IMToolKit\\unspecified\\res\\values\\values.xml",
+                    "position": {
+                        "startLine": 269,
+                        "startColumn": 4,
+                        "startOffset": 9619,
+                        "endColumn": 63,
+                        "endOffset": 9678
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 275,
+                    "startColumn": 4,
+                    "startOffset": 9947,
+                    "endColumn": 51,
+                    "endOffset": 9994
+                },
+                "from": {
+                    "file": "C:\\Users\\Administrator\\Desktop\\demo\\Android_ChatRoom_Demo_Src\\app\\build\\intermediates\\exploded-aar\\Android_ChatRoom_Demo_Src\\IMToolKit\\unspecified\\res\\values\\values.xml",
+                    "position": {
+                        "startLine": 270,
+                        "startColumn": 4,
+                        "startOffset": 9683,
+                        "endColumn": 51,
+                        "endOffset": 9730
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 276,
+                    "startColumn": 4,
+                    "startOffset": 9999,
+                    "endColumn": 64,
+                    "endOffset": 10059
+                },
+                "from": {
+                    "file": "C:\\Users\\Administrator\\Desktop\\demo\\Android_ChatRoom_Demo_Src\\app\\build\\intermediates\\exploded-aar\\Android_ChatRoom_Demo_Src\\IMToolKit\\unspecified\\res\\values\\values.xml",
+                    "position": {
+                        "startLine": 271,
+                        "startColumn": 4,
+                        "startOffset": 9735,
+                        "endColumn": 64,
+                        "endOffset": 9795
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 277,
+                    "startColumn": 4,
+                    "startOffset": 10064,
+                    "endColumn": 63,
+                    "endOffset": 10123
+                },
+                "from": {
+                    "file": "C:\\Users\\Administrator\\Desktop\\demo\\Android_ChatRoom_Demo_Src\\app\\build\\intermediates\\exploded-aar\\Android_ChatRoom_Demo_Src\\IMToolKit\\unspecified\\res\\values\\values.xml",
+                    "position": {
+                        "startLine": 272,
+                        "startColumn": 4,
+                        "startOffset": 9800,
+                        "endColumn": 63,
+                        "endOffset": 9859
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 278,
+                    "startColumn": 4,
+                    "startOffset": 10128,
+                    "endColumn": 64,
+                    "endOffset": 10188
+                },
+                "from": {
+                    "file": "C:\\Users\\Administrator\\Desktop\\demo\\Android_ChatRoom_Demo_Src\\app\\build\\intermediates\\exploded-aar\\Android_ChatRoom_Demo_Src\\IMToolKit\\unspecified\\res\\values\\values.xml",
+                    "position": {
+                        "startLine": 273,
+                        "startColumn": 4,
+                        "startOffset": 9864,
+                        "endColumn": 64,
+                        "endOffset": 9924
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 279,
+                    "startColumn": 4,
+                    "startOffset": 10193,
+                    "endColumn": 69,
+                    "endOffset": 10258
+                },
+                "from": {
+                    "file": "C:\\Users\\Administrator\\Desktop\\demo\\Android_ChatRoom_Demo_Src\\app\\build\\intermediates\\exploded-aar\\Android_ChatRoom_Demo_Src\\IMToolKit\\unspecified\\res\\values\\values.xml",
+                    "position": {
+                        "startLine": 274,
+                        "startColumn": 4,
+                        "startOffset": 9929,
+                        "endColumn": 69,
+                        "endOffset": 9994
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 280,
+                    "startColumn": 4,
+                    "startOffset": 10263,
+                    "endColumn": 68,
+                    "endOffset": 10327
+                },
+                "from": {
+                    "file": "C:\\Users\\Administrator\\Desktop\\demo\\Android_ChatRoom_Demo_Src\\app\\build\\intermediates\\exploded-aar\\Android_ChatRoom_Demo_Src\\IMToolKit\\unspecified\\res\\values\\values.xml",
+                    "position": {
+                        "startLine": 275,
+                        "startColumn": 4,
+                        "startOffset": 9999,
+                        "endColumn": 68,
+                        "endOffset": 10063
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 281,
+                    "startColumn": 4,
+                    "startOffset": 10332,
+                    "endColumn": 65,
+                    "endOffset": 10393
+                },
+                "from": {
+                    "file": "C:\\Users\\Administrator\\Desktop\\demo\\Android_ChatRoom_Demo_Src\\app\\build\\intermediates\\exploded-aar\\Android_ChatRoom_Demo_Src\\IMToolKit\\unspecified\\res\\values\\values.xml",
+                    "position": {
+                        "startLine": 276,
+                        "startColumn": 4,
+                        "startOffset": 10068,
+                        "endColumn": 65,
+                        "endOffset": 10129
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 282,
+                    "startColumn": 4,
+                    "startOffset": 10398,
+                    "endColumn": 36,
+                    "endOffset": 10430
+                },
+                "from": {
+                    "file": "C:\\Users\\Administrator\\Desktop\\demo\\Android_ChatRoom_Demo_Src\\app\\build\\intermediates\\exploded-aar\\Android_ChatRoom_Demo_Src\\IMToolKit\\unspecified\\res\\values\\values.xml",
+                    "position": {
+                        "startLine": 277,
+                        "startColumn": 4,
+                        "startOffset": 10134,
+                        "endColumn": 36,
+                        "endOffset": 10166
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 283,
+                    "startColumn": 4,
+                    "startOffset": 10435,
+                    "endColumn": 35,
+                    "endOffset": 10466
+                },
+                "from": {
+                    "file": "C:\\Users\\Administrator\\Desktop\\demo\\Android_ChatRoom_Demo_Src\\app\\build\\intermediates\\exploded-aar\\Android_ChatRoom_Demo_Src\\IMToolKit\\unspecified\\res\\values\\values.xml",
+                    "position": {
+                        "startLine": 278,
+                        "startColumn": 4,
+                        "startOffset": 10171,
+                        "endColumn": 35,
+                        "endOffset": 10202
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 284,
+                    "startColumn": 4,
+                    "startOffset": 10471,
+                    "endColumn": 36,
+                    "endOffset": 10503
+                },
+                "from": {
+                    "file": "C:\\Users\\Administrator\\Desktop\\demo\\Android_ChatRoom_Demo_Src\\app\\build\\intermediates\\exploded-aar\\Android_ChatRoom_Demo_Src\\IMToolKit\\unspecified\\res\\values\\values.xml",
+                    "position": {
+                        "startLine": 279,
+                        "startColumn": 4,
+                        "startOffset": 10207,
+                        "endColumn": 36,
+                        "endOffset": 10239
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 285,
+                    "startColumn": 4,
+                    "startOffset": 10508,
+                    "endColumn": 61,
+                    "endOffset": 10565
+                },
+                "from": {
+                    "file": "C:\\Users\\Administrator\\Desktop\\demo\\Android_ChatRoom_Demo_Src\\app\\build\\intermediates\\exploded-aar\\Android_ChatRoom_Demo_Src\\IMToolKit\\unspecified\\res\\values\\values.xml",
+                    "position": {
+                        "startLine": 280,
+                        "startColumn": 4,
+                        "startOffset": 10244,
+                        "endColumn": 61,
+                        "endOffset": 10301
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 286,
+                    "startColumn": 4,
+                    "startOffset": 10570,
+                    "endColumn": 49,
+                    "endOffset": 10615
+                },
+                "from": {
+                    "file": "C:\\Users\\Administrator\\Desktop\\demo\\Android_ChatRoom_Demo_Src\\app\\build\\intermediates\\exploded-aar\\Android_ChatRoom_Demo_Src\\IMToolKit\\unspecified\\res\\values\\values.xml",
+                    "position": {
+                        "startLine": 281,
+                        "startColumn": 4,
+                        "startOffset": 10306,
+                        "endColumn": 49,
+                        "endOffset": 10351
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 287,
+                    "startColumn": 4,
+                    "startOffset": 10620,
+                    "endColumn": 47,
+                    "endOffset": 10663
+                },
+                "from": {
+                    "file": "C:\\Users\\Administrator\\Desktop\\demo\\Android_ChatRoom_Demo_Src\\app\\build\\intermediates\\exploded-aar\\Android_ChatRoom_Demo_Src\\IMToolKit\\unspecified\\res\\values\\values.xml",
+                    "position": {
+                        "startLine": 282,
+                        "startColumn": 4,
+                        "startOffset": 10356,
+                        "endColumn": 47,
+                        "endOffset": 10399
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 288,
+                    "startColumn": 4,
+                    "startOffset": 10668,
+                    "endColumn": 40,
+                    "endOffset": 10704
+                },
+                "from": {
+                    "file": "C:\\Users\\Administrator\\Desktop\\demo\\Android_ChatRoom_Demo_Src\\app\\src\\main\\res\\values\\strings.xml",
+                    "position": {
+                        "startLine": 1,
+                        "startColumn": 4,
+                        "startOffset": 16,
+                        "endColumn": 40,
+                        "endOffset": 52
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 289,
+                    "startColumn": 4,
+                    "startOffset": 10709,
+                    "endColumn": 54,
+                    "endOffset": 10759
+                },
+                "from": {
+                    "file": "C:\\Users\\Administrator\\Desktop\\demo\\Android_ChatRoom_Demo_Src\\app\\src\\main\\res\\values\\strings.xml",
+                    "position": {
+                        "startLine": 3,
+                        "startColumn": 4,
+                        "startOffset": 109,
+                        "endColumn": 54,
+                        "endOffset": 159
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 290,
+                    "startColumn": 4,
+                    "startOffset": 10764,
+                    "endColumn": 51,
+                    "endOffset": 10811
+                },
+                "from": {
+                    "file": "C:\\Users\\Administrator\\Desktop\\demo\\Android_ChatRoom_Demo_Src\\app\\src\\main\\res\\values\\strings.xml",
+                    "position": {
+                        "startLine": 4,
+                        "startColumn": 4,
+                        "startOffset": 164,
+                        "endColumn": 51,
+                        "endOffset": 211
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 291,
+                    "startColumn": 4,
+                    "startOffset": 10816,
+                    "endColumn": 51,
+                    "endOffset": 10863
+                },
+                "from": {
+                    "file": "C:\\Users\\Administrator\\Desktop\\demo\\Android_ChatRoom_Demo_Src\\app\\src\\main\\res\\values\\strings.xml",
+                    "position": {
+                        "startLine": 2,
+                        "startColumn": 4,
+                        "startOffset": 57,
+                        "endColumn": 51,
+                        "endOffset": 104
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 292,
+                    "startColumn": 4,
+                    "startOffset": 10868,
+                    "endColumn": 47,
+                    "endOffset": 10911
+                },
+                "from": {
+                    "file": "C:\\Users\\Administrator\\Desktop\\demo\\Android_ChatRoom_Demo_Src\\app\\build\\intermediates\\exploded-aar\\Android_ChatRoom_Demo_Src\\IMToolKit\\unspecified\\res\\values\\values.xml",
+                    "position": {
+                        "startLine": 283,
+                        "startColumn": 4,
+                        "startOffset": 10404,
+                        "endColumn": 47,
+                        "endOffset": 10447
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 293,
+                    "startColumn": 4,
+                    "startOffset": 10916,
+                    "endColumn": 49,
+                    "endOffset": 10961
+                },
+                "from": {
+                    "file": "C:\\Users\\Administrator\\Desktop\\demo\\Android_ChatRoom_Demo_Src\\app\\build\\intermediates\\exploded-aar\\Android_ChatRoom_Demo_Src\\IMToolKit\\unspecified\\res\\values\\values.xml",
+                    "position": {
+                        "startLine": 284,
+                        "startColumn": 4,
+                        "startOffset": 10452,
+                        "endColumn": 49,
+                        "endOffset": 10497
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 294,
+                    "startColumn": 4,
+                    "startOffset": 10966,
+                    "endColumn": 66,
+                    "endOffset": 11028
+                },
+                "from": {
+                    "file": "C:\\Users\\Administrator\\Desktop\\demo\\Android_ChatRoom_Demo_Src\\app\\build\\intermediates\\exploded-aar\\Android_ChatRoom_Demo_Src\\IMToolKit\\unspecified\\res\\values\\values.xml",
+                    "position": {
+                        "startLine": 285,
+                        "startColumn": 4,
+                        "startOffset": 10502,
+                        "endColumn": 66,
+                        "endOffset": 10564
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 295,
+                    "startColumn": 4,
+                    "startOffset": 11033,
+                    "endColumn": 77,
+                    "endOffset": 11106
+                },
+                "from": {
+                    "file": "C:\\Users\\Administrator\\Desktop\\demo\\Android_ChatRoom_Demo_Src\\app\\build\\intermediates\\exploded-aar\\Android_ChatRoom_Demo_Src\\IMToolKit\\unspecified\\res\\values\\values.xml",
+                    "position": {
+                        "startLine": 286,
+                        "startColumn": 4,
+                        "startOffset": 10569,
+                        "endColumn": 77,
+                        "endOffset": 10642
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 296,
+                    "startColumn": 4,
+                    "startOffset": 11111,
+                    "endColumn": 64,
+                    "endOffset": 11171
+                },
+                "from": {
+                    "file": "C:\\Users\\Administrator\\Desktop\\demo\\Android_ChatRoom_Demo_Src\\app\\build\\intermediates\\exploded-aar\\Android_ChatRoom_Demo_Src\\IMToolKit\\unspecified\\res\\values\\values.xml",
+                    "position": {
+                        "startLine": 287,
+                        "startColumn": 4,
+                        "startOffset": 10647,
+                        "endColumn": 64,
+                        "endOffset": 10707
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 297,
+                    "startColumn": 4,
+                    "startOffset": 11176,
+                    "endColumn": 48,
+                    "endOffset": 11220
+                },
+                "from": {
+                    "file": "C:\\Users\\Administrator\\Desktop\\demo\\Android_ChatRoom_Demo_Src\\app\\build\\intermediates\\exploded-aar\\Android_ChatRoom_Demo_Src\\IMToolKit\\unspecified\\res\\values\\values.xml",
+                    "position": {
+                        "startLine": 288,
+                        "startColumn": 4,
+                        "startOffset": 10712,
+                        "endColumn": 48,
+                        "endOffset": 10756
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 298,
+                    "startColumn": 4,
+                    "startOffset": 11225,
+                    "endColumn": 57,
+                    "endOffset": 11278
+                },
+                "from": {
+                    "file": "C:\\Users\\Administrator\\Desktop\\demo\\Android_ChatRoom_Demo_Src\\app\\build\\intermediates\\exploded-aar\\Android_ChatRoom_Demo_Src\\IMToolKit\\unspecified\\res\\values\\values.xml",
+                    "position": {
+                        "startLine": 289,
+                        "startColumn": 4,
+                        "startOffset": 10761,
+                        "endColumn": 57,
+                        "endOffset": 10814
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 299,
+                    "startColumn": 4,
+                    "startOffset": 11283,
+                    "endColumn": 48,
+                    "endOffset": 11327
+                },
+                "from": {
+                    "file": "C:\\Users\\Administrator\\Desktop\\demo\\Android_ChatRoom_Demo_Src\\app\\build\\intermediates\\exploded-aar\\Android_ChatRoom_Demo_Src\\IMToolKit\\unspecified\\res\\values\\values.xml",
+                    "position": {
+                        "startLine": 290,
+                        "startColumn": 4,
+                        "startOffset": 10819,
+                        "endColumn": 48,
+                        "endOffset": 10863
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 300,
+                    "startColumn": 4,
+                    "startOffset": 11332,
+                    "endColumn": 57,
+                    "endOffset": 11385
+                },
+                "from": {
+                    "file": "C:\\Users\\Administrator\\Desktop\\demo\\Android_ChatRoom_Demo_Src\\app\\build\\intermediates\\exploded-aar\\Android_ChatRoom_Demo_Src\\IMToolKit\\unspecified\\res\\values\\values.xml",
+                    "position": {
+                        "startLine": 291,
+                        "startColumn": 4,
+                        "startOffset": 10868,
+                        "endColumn": 57,
+                        "endOffset": 10921
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 301,
+                    "startColumn": 4,
+                    "startOffset": 11390,
+                    "endColumn": 56,
+                    "endOffset": 11442
+                },
+                "from": {
+                    "file": "C:\\Users\\Administrator\\Desktop\\demo\\Android_ChatRoom_Demo_Src\\app\\build\\intermediates\\exploded-aar\\Android_ChatRoom_Demo_Src\\IMToolKit\\unspecified\\res\\values\\values.xml",
+                    "position": {
+                        "startLine": 292,
+                        "startColumn": 4,
+                        "startOffset": 10926,
+                        "endColumn": 56,
+                        "endOffset": 10978
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 302,
+                    "startColumn": 4,
+                    "startOffset": 11447,
+                    "endColumn": 48,
+                    "endOffset": 11491
+                },
+                "from": {
+                    "file": "C:\\Users\\Administrator\\Desktop\\demo\\Android_ChatRoom_Demo_Src\\app\\build\\intermediates\\exploded-aar\\Android_ChatRoom_Demo_Src\\IMToolKit\\unspecified\\res\\values\\values.xml",
+                    "position": {
+                        "startLine": 293,
+                        "startColumn": 4,
+                        "startOffset": 10983,
+                        "endColumn": 48,
+                        "endOffset": 11027
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 303,
+                    "startColumn": 4,
+                    "startOffset": 11496,
+                    "endColumn": 62,
+                    "endOffset": 11554
+                },
+                "from": {
+                    "file": "C:\\Users\\Administrator\\Desktop\\demo\\Android_ChatRoom_Demo_Src\\app\\build\\intermediates\\exploded-aar\\Android_ChatRoom_Demo_Src\\IMToolKit\\unspecified\\res\\values\\values.xml",
+                    "position": {
+                        "startLine": 294,
+                        "startColumn": 4,
+                        "startOffset": 11032,
+                        "endColumn": 62,
+                        "endOffset": 11090
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 304,
+                    "startColumn": 4,
+                    "startOffset": 11559,
+                    "endColumn": 55,
+                    "endOffset": 11610
+                },
+                "from": {
+                    "file": "C:\\Users\\Administrator\\Desktop\\demo\\Android_ChatRoom_Demo_Src\\app\\build\\intermediates\\exploded-aar\\Android_ChatRoom_Demo_Src\\IMToolKit\\unspecified\\res\\values\\values.xml",
+                    "position": {
+                        "startLine": 295,
+                        "startColumn": 4,
+                        "startOffset": 11095,
+                        "endColumn": 55,
+                        "endOffset": 11146
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 305,
+                    "startColumn": 4,
+                    "startOffset": 11615,
+                    "endColumn": 48,
+                    "endOffset": 11659
+                },
+                "from": {
+                    "file": "C:\\Users\\Administrator\\Desktop\\demo\\Android_ChatRoom_Demo_Src\\app\\build\\intermediates\\exploded-aar\\Android_ChatRoom_Demo_Src\\IMToolKit\\unspecified\\res\\values\\values.xml",
+                    "position": {
+                        "startLine": 296,
+                        "startColumn": 4,
+                        "startOffset": 11151,
+                        "endColumn": 48,
+                        "endOffset": 11195
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 306,
+                    "startColumn": 4,
+                    "startOffset": 11664,
+                    "endColumn": 56,
+                    "endOffset": 11716
+                },
+                "from": {
+                    "file": "C:\\Users\\Administrator\\Desktop\\demo\\Android_ChatRoom_Demo_Src\\app\\build\\intermediates\\exploded-aar\\Android_ChatRoom_Demo_Src\\IMToolKit\\unspecified\\res\\values\\values.xml",
+                    "position": {
+                        "startLine": 297,
+                        "startColumn": 4,
+                        "startOffset": 11200,
+                        "endColumn": 56,
+                        "endOffset": 11252
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 307,
+                    "startColumn": 4,
+                    "startOffset": 11721,
+                    "endColumn": 64,
+                    "endOffset": 11781
+                },
+                "from": {
+                    "file": "C:\\Users\\Administrator\\Desktop\\demo\\Android_ChatRoom_Demo_Src\\app\\build\\intermediates\\exploded-aar\\Android_ChatRoom_Demo_Src\\IMToolKit\\unspecified\\res\\values\\values.xml",
+                    "position": {
+                        "startLine": 298,
+                        "startColumn": 4,
+                        "startOffset": 11257,
+                        "endColumn": 64,
+                        "endOffset": 11317
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 308,
+                    "startColumn": 4,
+                    "startOffset": 11786,
+                    "endColumn": 53,
+                    "endOffset": 11835
+                },
+                "from": {
+                    "file": "C:\\Users\\Administrator\\Desktop\\demo\\Android_ChatRoom_Demo_Src\\app\\build\\intermediates\\exploded-aar\\Android_ChatRoom_Demo_Src\\IMToolKit\\unspecified\\res\\values\\values.xml",
+                    "position": {
+                        "startLine": 299,
+                        "startColumn": 4,
+                        "startOffset": 11322,
+                        "endColumn": 53,
+                        "endOffset": 11371
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 309,
+                    "startColumn": 4,
+                    "startOffset": 11840,
+                    "endColumn": 63,
+                    "endOffset": 11899
+                },
+                "from": {
+                    "file": "C:\\Users\\Administrator\\Desktop\\demo\\Android_ChatRoom_Demo_Src\\app\\build\\intermediates\\exploded-aar\\Android_ChatRoom_Demo_Src\\IMToolKit\\unspecified\\res\\values\\values.xml",
+                    "position": {
+                        "startLine": 300,
+                        "startColumn": 4,
+                        "startOffset": 11376,
+                        "endColumn": 63,
+                        "endOffset": 11435
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 310,
+                    "startColumn": 4,
+                    "startOffset": 11904,
+                    "endColumn": 46,
+                    "endOffset": 11946
+                },
+                "from": {
+                    "file": "C:\\Users\\Administrator\\Desktop\\demo\\Android_ChatRoom_Demo_Src\\app\\build\\intermediates\\exploded-aar\\Android_ChatRoom_Demo_Src\\IMToolKit\\unspecified\\res\\values\\values.xml",
+                    "position": {
+                        "startLine": 301,
+                        "startColumn": 4,
+                        "startOffset": 11440,
+                        "endColumn": 46,
+                        "endOffset": 11482
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 311,
+                    "startColumn": 4,
+                    "startOffset": 11951,
+                    "endColumn": 49,
+                    "endOffset": 11996
+                },
+                "from": {
+                    "file": "C:\\Users\\Administrator\\Desktop\\demo\\Android_ChatRoom_Demo_Src\\app\\build\\intermediates\\exploded-aar\\Android_ChatRoom_Demo_Src\\IMToolKit\\unspecified\\res\\values\\values.xml",
+                    "position": {
+                        "startLine": 302,
+                        "startColumn": 4,
+                        "startOffset": 11487,
+                        "endColumn": 49,
+                        "endOffset": 11532
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 312,
+                    "startColumn": 4,
+                    "startOffset": 12001,
+                    "endColumn": 56,
+                    "endOffset": 12053
+                },
+                "from": {
+                    "file": "C:\\Users\\Administrator\\Desktop\\demo\\Android_ChatRoom_Demo_Src\\app\\build\\intermediates\\exploded-aar\\Android_ChatRoom_Demo_Src\\IMToolKit\\unspecified\\res\\values\\values.xml",
+                    "position": {
+                        "startLine": 303,
+                        "startColumn": 4,
+                        "startOffset": 11537,
+                        "endColumn": 56,
+                        "endOffset": 11589
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 313,
+                    "startColumn": 4,
+                    "startOffset": 12058,
+                    "endColumn": 38,
+                    "endOffset": 12092
+                },
+                "from": {
+                    "file": "C:\\Users\\Administrator\\Desktop\\demo\\Android_ChatRoom_Demo_Src\\app\\build\\intermediates\\exploded-aar\\Android_ChatRoom_Demo_Src\\IMToolKit\\unspecified\\res\\values\\values.xml",
+                    "position": {
+                        "startLine": 304,
+                        "startColumn": 4,
+                        "startOffset": 11594,
+                        "endColumn": 38,
+                        "endOffset": 11628
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 314,
+                    "startColumn": 4,
+                    "startOffset": 12097,
+                    "endLine": 317,
+                    "endColumn": 12,
+                    "endOffset": 12310
+                },
+                "from": {
+                    "file": "C:\\Users\\Administrator\\Desktop\\demo\\Android_ChatRoom_Demo_Src\\app\\src\\main\\res\\values\\styles.xml",
+                    "position": {
+                        "startLine": 7,
+                        "startColumn": 4,
+                        "startOffset": 236,
+                        "endLine": 10,
+                        "endColumn": 12,
+                        "endOffset": 449
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 318,
+                    "startColumn": 4,
+                    "startOffset": 12315,
+                    "endLine": 321,
+                    "endColumn": 12,
+                    "endOffset": 12528
+                },
+                "from": {
+                    "file": "C:\\Users\\Administrator\\Desktop\\demo\\Android_ChatRoom_Demo_Src\\app\\src\\main\\res\\values\\styles.xml",
+                    "position": {
+                        "startLine": 2,
+                        "startColumn": 4,
+                        "startOffset": 17,
+                        "endLine": 5,
+                        "endColumn": 12,
+                        "endOffset": 230
+                    }
+                }
+            }
+        ]
+    }
+]
