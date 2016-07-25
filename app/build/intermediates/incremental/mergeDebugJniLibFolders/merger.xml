@@ -1,2 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<merger version="3"><dataSet config="main"><source path="C:\Users\Administrator\Desktop\demo\Android_ChatRoom_Demo_Src\app\libs"><file name="eventbus-2.4.0.jar" path="C:\Users\Administrator\Desktop\demo\Android_ChatRoom_Demo_Src\app\libs\eventbus-2.4.0.jar"/></source></dataSet><dataSet config="debug"><source path="C:\Users\Administrator\Desktop\demo\Android_ChatRoom_Demo_Src\app\src\debug\jniLibs"/></dataSet></merger>

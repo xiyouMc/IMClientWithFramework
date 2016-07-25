@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<io.rong.livekit.livechat.template.BaseContainerView
+<io.rong.ui.BaseContainerView
     android:id="@+id/rc_content"
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="234dp"

@@ -1,1 +1,1 @@
-include ':app', ':IMToolKit'
+include ':app', ':imapi', ':imcore'

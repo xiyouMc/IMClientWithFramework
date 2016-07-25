@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <color name="live_master">#ff3eb9</color>
-    <color name="live_me">#62e0ff</color>
-    <color name="live_other">#e2e2e2</color>
+
 
     <!-- login editbox -->
     <color name="login_editbox_underline_enable">#67a24e</color>
