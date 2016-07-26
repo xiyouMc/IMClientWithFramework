@@ -1,6 +1,8 @@
 package io.rong.ui;
 
+import com.xiaoying.imapi.XYOperationCallback;
 import com.xiaoying.imapi.api.BusEvent;
+import com.xiaoying.imapi.model.ErrorCode;
 import com.xiaoying.imapi.service.IMService;
 
 import android.net.Uri;
@@ -22,8 +24,6 @@ import android.widget.Toast;
 
 import java.util.List;
 
-import io.rong.util.IMUtil;
-import io.rong.ui.adapter.LiveChatListAdapter;
 import io.rong.imlib.RongIMClient;
 import io.rong.imlib.model.Conversation;
 import io.rong.imlib.model.Message;
@@ -37,6 +37,8 @@ import io.rong.message.TextMessage;
 import io.rong.toolkit.IInputBoardClickListener;
 import io.rong.toolkit.InputBar;
 import io.rong.toolkit.RongInputBoard;
+import io.rong.ui.adapter.LiveChatListAdapter;
+import io.rong.util.IMUtil;
 
 public class LiveChatRoomFragment extends Fragment implements RongIMClient.OnReceiveMessageListener, Handler.Callback {
 
@@ -89,7 +91,7 @@ public class LiveChatRoomFragment extends Fragment implements RongIMClient.OnRec
         liveChatListAdapter = new LiveChatListAdapter();
         liveChatListView.setAdapter(liveChatListAdapter);
 
-        RongIMClient.getInstance().joinChatRoom(targetId, -1, new RongIMClient.OperationCallback() {
+        imService.joinChatRoom(targetId, -1, new XYOperationCallback() {
             @Override
             public void onSuccess() {
                 if (imService == null) {
@@ -104,7 +106,7 @@ public class LiveChatRoomFragment extends Fragment implements RongIMClient.OnRec
             }
 
             @Override
-            public void onError(RongIMClient.ErrorCode errorCode) {
+            public void onError(ErrorCode errorCode) {
 
             }
         });

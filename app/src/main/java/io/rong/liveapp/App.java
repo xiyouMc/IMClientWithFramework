@@ -10,19 +10,20 @@ import android.app.Application;
 import android.content.Context;
 import android.util.Log;
 
-import io.rong.util.IMUtil;
 import io.rong.imlib.model.Message;
 import io.rong.template.InformationNotificationMessageTemplate;
 import io.rong.template.TextMessageTemplate;
+import io.rong.util.IMUtil;
 
 public class App extends Application {
 
     private boolean isIint = false;
 
+    private IMService imService;
+
     @Override
     public void onCreate() {
         super.onCreate();
-        IMService imService = null;
         if (!isIint) {
             FrameworkUtil.setContext(this);
             FrameworkUtil.prepare();

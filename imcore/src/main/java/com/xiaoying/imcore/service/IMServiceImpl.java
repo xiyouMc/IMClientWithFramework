@@ -5,12 +5,15 @@ import com.xiaoying.imapi.XYIMConnectCallback;
 import com.xiaoying.imapi.XYIMOnReceiveMessageListener;
 import com.xiaoying.imapi.XYIMResultCallback;
 import com.xiaoying.imapi.XYIMSendMessageCallback;
+import com.xiaoying.imapi.XYOperationCallback;
 import com.xiaoying.imapi.api.UserInfoProvider;
 import com.xiaoying.imapi.service.IMService;
 import com.xiaoying.imcore.livekit.RongIM;
 
 import android.content.Context;
+import android.util.Log;
 
+import io.rong.imlib.RongIMClient;
 import io.rong.imlib.model.Conversation;
 import io.rong.imlib.model.Message;
 import io.rong.imlib.model.MessageContent;
@@ -83,5 +86,21 @@ public class IMServiceImpl implements IMService {
     @Override
     public void setCurrentUserInfo(UserInfo userInfo) {
         RongIM.getInstance().setCurrentUserInfo(userInfo);
+    }
+
+    @Override
+    public void joinChatRoom(String chatroomId, int defMessageCount, final XYOperationCallback callback) {
+        RongIMClient.getInstance().joinChatRoom(chatroomId, defMessageCount, new RongIMClient.OperationCallback() {
+            @Override
+            public void onSuccess() {
+                callback.onSuccess();
+            }
+
+            @Override
+            public void onError(RongIMClient.ErrorCode errorCode) {
+                Log.d("IMService", errorCode.getMessage());
+//                callback.onError(errorCode);
+            }
+        });
     }
 }

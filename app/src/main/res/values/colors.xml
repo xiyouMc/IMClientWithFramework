@@ -6,4 +6,5 @@
     <!-- login editbox -->
     <color name="login_editbox_underline_enable">#67a24e</color>
     <color name="login_editbox_underline_disable">#d7d7d7</color>
+    <color name="transparent">#00000000</color>
 </resources>

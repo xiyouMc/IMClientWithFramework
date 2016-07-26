@@ -5,6 +5,7 @@ import com.xiaoying.imapi.XYIMConnectCallback;
 import com.xiaoying.imapi.XYIMOnReceiveMessageListener;
 import com.xiaoying.imapi.XYIMResultCallback;
 import com.xiaoying.imapi.XYIMSendMessageCallback;
+import com.xiaoying.imapi.XYOperationCallback;
 import com.xiaoying.imapi.api.UserInfoProvider;
 
 import android.content.Context;
@@ -43,5 +44,7 @@ public interface IMService {
     void registerMessageEvent(XYIMOnReceiveMessageListener listener);
 
     void setCurrentUserInfo(UserInfo userInfo);
+
+    void joinChatRoom(final String chatroomId, final int defMessageCount, final XYOperationCallback callback);
 
 }
