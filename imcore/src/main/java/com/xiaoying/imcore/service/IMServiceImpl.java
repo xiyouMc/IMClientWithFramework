@@ -1,16 +1,21 @@
 package com.xiaoying.imcore.service;
 
 import com.xiaoying.imapi.BaseMessageTemplate;
+import com.xiaoying.imapi.XYConversationType;
 import com.xiaoying.imapi.XYIMConnectCallback;
 import com.xiaoying.imapi.XYIMOnReceiveMessageListener;
 import com.xiaoying.imapi.XYIMResultCallback;
 import com.xiaoying.imapi.XYIMSendMessageCallback;
+import com.xiaoying.imapi.XYIMUserInfo;
 import com.xiaoying.imapi.XYOperationCallback;
 import com.xiaoying.imapi.api.UserInfoProvider;
+import com.xiaoying.imapi.message.XYMessage;
+import com.xiaoying.imapi.message.XYMessageContent;
 import com.xiaoying.imapi.service.IMService;
 import com.xiaoying.imcore.livekit.RongIM;
 
 import android.content.Context;
+import android.os.Parcel;
 import android.util.Log;
 
 import io.rong.imlib.RongIMClient;
@@ -44,12 +49,12 @@ public class IMServiceImpl implements IMService {
     }
 
     @Override
-    public void startConversation(Context context, Conversation.ConversationType conversationType, String targetId, String liveUrl) {
-        RongIM.getInstance().startConversation(context, conversationType, targetId, liveUrl);
+    public void startConversation(Context context, XYConversationType conversationType, String targetId, String liveUrl) {
+        RongIM.getInstance().startConversation(context, Conversation.ConversationType.setValue(conversationType.getValue()), targetId, liveUrl);
     }
 
     @Override
-    public void registerMessageType(Class<? extends MessageContent> messageContentClass) {
+    public void registerMessageType(Class messageContentClass) {
         RongIM.getInstance().registerMessageType(messageContentClass);
     }
 
@@ -59,7 +64,7 @@ public class IMServiceImpl implements IMService {
     }
 
     @Override
-    public BaseMessageTemplate getMessageTemplate(Class<? extends MessageContent> messageContent) {
+    public BaseMessageTemplate getMessageTemplate(Class messageContent) {
         return RongIM.getInstance().getMessageTemplate(messageContent);
     }
 
@@ -69,13 +74,31 @@ public class IMServiceImpl implements IMService {
     }
 
     @Override
-    public UserInfo getCurrentUserInfo() {
-        return RongIM.getInstance().getCurrentUserInfo();
+    public XYIMUserInfo getCurrentUserInfo() {
+        UserInfo userInfo = RongIM.getInstance().getCurrentUserInfo();
+        return new XYIMUserInfo(userInfo.getUserId(), userInfo.getName(), userInfo.getPortraitUri());
     }
 
     @Override
-    public void sendMessage(Message msg, XYIMSendMessageCallback callback, XYIMResultCallback<Message> result) {
-        RongIM.getInstance().sendMessage(msg, callback, result);
+    public void sendMessage(final XYMessage msg, XYIMSendMessageCallback callback, XYIMResultCallback result) {
+        RongIM.getInstance().sendMessage(Message.obtain(msg.getTargetId(), Conversation.ConversationType.setValue(msg.getConversationType().getValue()), new MessageContent() {
+            XYMessageContent mContent = msg.getContent();
+
+            @Override
+            public byte[] encode() {
+                return mContent.encode();
+            }
+
+            @Override
+            public int describeContents() {
+                return mContent.describeContents();
+            }
+
+            @Override
+            public void writeToParcel(Parcel parcel, int i) {
+                mContent.writeToParcel(parcel, i);
+            }
+        }), callback, result);
     }
 
     @Override
@@ -84,8 +107,8 @@ public class IMServiceImpl implements IMService {
     }
 
     @Override
-    public void setCurrentUserInfo(UserInfo userInfo) {
-        RongIM.getInstance().setCurrentUserInfo(userInfo);
+    public void setCurrentUserInfo(XYIMUserInfo userInfo) {
+        RongIM.getInstance().setCurrentUserInfo(new UserInfo(userInfo.getUserId(), userInfo.getName(), userInfo.getPortraitUri()));
     }
 
     @Override

@@ -1,7 +1,7 @@
 package io.rong.ui;
 
 import com.xiaoying.imapi.BaseMessageTemplate;
-import com.xiaoying.imapi.UIMessage;
+import com.xiaoying.imapi.message.UIMessage;
 
 import android.content.Context;
 import android.util.AttributeSet;

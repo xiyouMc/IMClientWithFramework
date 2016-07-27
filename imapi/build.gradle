@@ -24,7 +24,7 @@ apply plugin: 'signing'
 
 //定义GroupID和Version，ArtefactID会自动使用Project名
 group = 'com.vivavideo.mobile'
-version = '1.61'
+version = '1.61.1672701'
 
 artifacts {
     archives file('build/libs/' + project.name + '.jar')
@@ -90,7 +90,6 @@ task buildJar(type: Jar) {
     include "com/xiaoying/" + project.name + "/**/*.class"
 //    //注: exclude include 支持可变长参数
 //    include "io/rong/**/**/*.class"
-//    include "libs/ToolKit.jar"
 }
 
 buildscript {
@@ -118,5 +117,4 @@ allprojects {
 }
 dependencies {
     //    provided 'com.dynamicload.framework:framework:4.0.16074'
-    compile files('libs/ToolKit.jar')
 }

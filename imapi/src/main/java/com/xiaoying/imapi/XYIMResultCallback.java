@@ -1,12 +1,13 @@
 package com.xiaoying.imapi;
 
-import io.rong.imlib.RongIMClient;
-import io.rong.imlib.model.Message;
+import com.xiaoying.imapi.message.XYMessage;
+import com.xiaoying.imapi.model.ErrorCode;
 
 /**
  * Created by Administrator on 2016/6/7.
  */
 public interface XYIMResultCallback<T> {
-    public abstract void onSuccess(Message message);
-    public abstract void onError(RongIMClient.ErrorCode var1);
+    public abstract void onSuccess(XYMessage message);
+
+    public abstract void onError(ErrorCode var1);
 }

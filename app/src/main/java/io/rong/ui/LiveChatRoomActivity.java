@@ -1,14 +1,14 @@
 package io.rong.ui;
 
+import com.xiaoying.imapi.XYIMUserInfo;
 import com.xiaoying.imapi.api.UserInfoProvider;
 import com.xiaoying.imapi.service.IMService;
 
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
 
-import io.rong.util.IMUtil;
-import io.rong.imlib.model.UserInfo;
 import io.rong.liveapp.R;
+import io.rong.util.IMUtil;
 
 public class LiveChatRoomActivity extends FragmentActivity {
 
@@ -27,7 +27,7 @@ public class LiveChatRoomActivity extends FragmentActivity {
 
         mIMService.setUserInfoProvider(new UserInfoProvider() {
             @Override
-            public UserInfo getUserInfo(String userId) {
+            public XYIMUserInfo getUserInfo(String userId) {
                 return mIMService.getCurrentUserInfo();
             }
         });

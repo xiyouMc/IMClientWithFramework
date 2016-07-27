@@ -3,6 +3,7 @@ package io.rong.liveapp;
 import com.dynamicload.framework.util.FrameworkUtil;
 import com.xiaoying.imapi.XYIMOnReceiveMessageListener;
 import com.xiaoying.imapi.api.BusEvent;
+import com.xiaoying.imapi.message.XYMessage;
 import com.xiaoying.imapi.service.IMService;
 
 import android.app.ActivityManager;
@@ -10,7 +11,6 @@ import android.app.Application;
 import android.content.Context;
 import android.util.Log;
 
-import io.rong.imlib.model.Message;
 import io.rong.template.InformationNotificationMessageTemplate;
 import io.rong.template.TextMessageTemplate;
 import io.rong.util.IMUtil;
@@ -50,10 +50,10 @@ public class App extends Application {
                     imService.registerMessageTemplate(new InformationNotificationMessageTemplate());
                     imService.registerMessageEvent(new XYIMOnReceiveMessageListener() {
                         @Override
-                        public boolean onReceived(Message message, int left) {
+                        public boolean onReceived(XYMessage message, int left) {
                             Log.d("APP", "onReceived left = " + left);
                             IMUtil.getEventBus().post(new BusEvent.MessageReceived(message, left));
-                            return false;
+                            return true;
                         }
                     });
                 }

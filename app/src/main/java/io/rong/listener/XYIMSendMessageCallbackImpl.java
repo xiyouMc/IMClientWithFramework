@@ -2,18 +2,18 @@ package io.rong.listener;
 
 import com.xiaoying.imapi.XYIMSendMessageCallback;
 import com.xiaoying.imapi.api.BusEvent;
+import com.xiaoying.imapi.message.XYMessage;
+import com.xiaoying.imapi.model.ErrorCode;
 
 import io.rong.util.IMUtil;
-import io.rong.imlib.RongIMClient;
-import io.rong.imlib.model.Message;
 
 /**
  * Created by xiyoumc on 16/7/25.
  */
 public class XYIMSendMessageCallbackImpl implements XYIMSendMessageCallback {
-    private Message msg;
+    private XYMessage msg;
 
-    public XYIMSendMessageCallbackImpl(Message msg) {
+    public XYIMSendMessageCallbackImpl(XYMessage msg) {
         this.msg = msg;
     }
 
@@ -23,7 +23,7 @@ public class XYIMSendMessageCallbackImpl implements XYIMSendMessageCallback {
     }
 
     @Override
-    public void onError(Integer messageId, RongIMClient.ErrorCode e) {
+    public void onError(Integer messageId, ErrorCode e) {
         IMUtil.getEventBus().post(new BusEvent.MessageSent(msg, e.getValue()));
     }
 }

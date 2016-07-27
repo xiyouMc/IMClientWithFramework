@@ -1,13 +1,18 @@
 package io.rong.ui;
 
+import com.xiaoying.imapi.XYConversationType;
+import com.xiaoying.imapi.XYIMOnReceiveMessageListener;
+import com.xiaoying.imapi.XYIMUserInfo;
 import com.xiaoying.imapi.XYOperationCallback;
 import com.xiaoying.imapi.api.BusEvent;
+import com.xiaoying.imapi.message.XYMessage;
 import com.xiaoying.imapi.model.ErrorCode;
 import com.xiaoying.imapi.service.IMService;
 
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
+import android.os.Message;
 import android.support.v4.app.Fragment;
 import android.util.Log;
 import android.view.Gravity;
@@ -22,34 +27,24 @@ import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import java.util.List;
-
-import io.rong.imlib.RongIMClient;
-import io.rong.imlib.model.Conversation;
-import io.rong.imlib.model.Message;
-import io.rong.imlib.model.UserInfo;
 import io.rong.listener.XYIMResultCallbackImpl;
 import io.rong.listener.XYIMSendMessageCallbackImpl;
 import io.rong.liveapp.GiftMessage;
 import io.rong.liveapp.R;
-import io.rong.message.InformationNotificationMessage;
-import io.rong.message.TextMessage;
-import io.rong.toolkit.IInputBoardClickListener;
-import io.rong.toolkit.InputBar;
-import io.rong.toolkit.RongInputBoard;
 import io.rong.ui.adapter.LiveChatListAdapter;
+import io.rong.ui.message.XYInformationNotificationMessage;
 import io.rong.util.IMUtil;
 
-public class LiveChatRoomFragment extends Fragment implements RongIMClient.OnReceiveMessageListener, Handler.Callback {
+public class LiveChatRoomFragment extends Fragment implements XYIMOnReceiveMessageListener, Handler.Callback {
 
     private static final String TAG = "LiveChatRoomFragment";
 
     private ListView liveChatListView;
     private LiveChatListAdapter liveChatListAdapter;
     private NewMessageHint newMessage;
-    private RongInputBoard rongInputBoard;
+    private EditText rongInputBoard;
 
-    private Conversation.ConversationType conversationType;
+    private XYConversationType conversationType;
     private String targetId;
     private String liveUrl;
 
@@ -72,7 +67,7 @@ public class LiveChatRoomFragment extends Fragment implements RongIMClient.OnRec
 
         Uri uri = getActivity().getIntent().getData();
         String typeStr = uri.getLastPathSegment().toUpperCase();
-        conversationType = Conversation.ConversationType.valueOf(typeStr);
+        conversationType = XYConversationType.valueOf(typeStr);
         targetId = uri.getQueryParameter("targetId");
         liveUrl = uri.getQueryParameter("liveUrl");
     }
@@ -82,12 +77,12 @@ public class LiveChatRoomFragment extends Fragment implements RongIMClient.OnRec
         View root = inflater.inflate(R.layout.rc_fragment_live_chatroom, container, false);
         liveChatListView = (ListView) root.findViewById(R.id.live_chatlist);
         newMessage = new NewMessageHint(root, liveChatListView);
-        rongInputBoard = (RongInputBoard) root.findViewById(R.id.input_board);
-        rongInputBoard.setActivity(getActivity());
+        rongInputBoard = (EditText) root.findViewById(R.id.input_board);
+//        rongInputBoard.setActivity(getActivity());
         gift_flower = (ImageView) root.findViewById(R.id.gift_flower);
         gift_applaud = (ImageView) root.findViewById(R.id.gift_applaud);
 
-        rongInputBoard.setInputBarStyle(InputBar.Style.STYLE_CONTAINER);
+//        rongInputBoard.setInputBarStyle(InputBar.Style.STYLE_CONTAINER);
         liveChatListAdapter = new LiveChatListAdapter();
         liveChatListView.setAdapter(liveChatListAdapter);
 
@@ -97,11 +92,11 @@ public class LiveChatRoomFragment extends Fragment implements RongIMClient.OnRec
                 if (imService == null) {
                     return;
                 }
-                UserInfo info = imService.getCurrentUserInfo();
+                XYIMUserInfo info = imService.getCurrentUserInfo();
                 String infoText = String.format(getResources().getString(R.string.live_join_chatroom), info.getName());
                 Log.d(TAG, "infoText = " + infoText);
-                InformationNotificationMessage content = InformationNotificationMessage.obtain(infoText);
-                Message msg = Message.obtain(targetId, conversationType, content);
+                XYInformationNotificationMessage content = XYInformationNotificationMessage.obtain(infoText);
+                XYMessage msg = XYMessage.obtain(targetId, conversationType, content);
                 imService.sendMessage(msg, new XYIMSendMessageCallbackImpl(msg), new XYIMResultCallbackImpl());
             }
 
@@ -111,50 +106,50 @@ public class LiveChatRoomFragment extends Fragment implements RongIMClient.OnRec
             }
         });
 
-        rongInputBoard.setInputBoardClickListener(new IInputBoardClickListener() {
-            @Override
-            public void onSendToggleClick(View v, String text) {
-                if (imService == null) {
-                    return;
-                }
-                Message message = Message.obtain(targetId, conversationType, TextMessage.obtain(text));
-                UserInfo myInfo = imService.getCurrentUserInfo();
-                message.getContent().setUserInfo(myInfo);
-                message.setMessageDirection(Message.MessageDirection.SEND);
-                imService.sendMessage(message, new XYIMSendMessageCallbackImpl(message), new XYIMResultCallbackImpl());
-            }
-
-            @Override
-            public void onEditTextClick(EditText editText) {
-            }
-
-            @Override
-            public void onImageSendResult(List<Uri> selectedImages) {
-            }
-
-            @Override
-            public void onLocationSendResult() {
-            }
-
-            @Override
-            public boolean onSwitchToggleClick(View v, ViewGroup inputBoard) {
-                return false;
-            }
-
-            @Override
-            public void onAudioInputToggleTouch(View v, MotionEvent event) {
-            }
-
-            @Override
-            public boolean onEmoticonToggleClick(View v, ViewGroup emotionBoard) {
-                return false;
-            }
-
-            @Override
-            public boolean onPluginToggleClick(View v, ViewGroup pluginBoard) {
-                return false;
-            }
-        });
+//        rongInputBoard.setInputBoardClickListener(new IInputBoardClickListener() {
+//            @Override
+//            public void onSendToggleClick(View v, String text) {
+//                if (imService == null) {
+//                    return;
+//                }
+//                Message message = Message.obtain(targetId, conversationType, TextMessage.obtain(text));
+//                UserInfo myInfo = imService.getCurrentUserInfo();
+//                message.getContent().setUserInfo(myInfo);
+//                message.setMessageDirection(Message.MessageDirection.SEND);
+//                imService.sendMessage(message, new XYIMSendMessageCallbackImpl(message), new XYIMResultCallbackImpl());
+//            }
+//
+//            @Override
+//            public void onEditTextClick(EditText editText) {
+//            }
+//
+//            @Override
+//            public void onImageSendResult(List<Uri> selectedImages) {
+//            }
+//
+//            @Override
+//            public void onLocationSendResult() {
+//            }
+//
+//            @Override
+//            public boolean onSwitchToggleClick(View v, ViewGroup inputBoard) {
+//                return false;
+//            }
+//
+//            @Override
+//            public void onAudioInputToggleTouch(View v, MotionEvent event) {
+//            }
+//
+//            @Override
+//            public boolean onEmoticonToggleClick(View v, ViewGroup emotionBoard) {
+//                return false;
+//            }
+//
+//            @Override
+//            public boolean onPluginToggleClick(View v, ViewGroup pluginBoard) {
+//                return false;
+//            }
+//        });
 
         gift_flower.setOnTouchListener(new View.OnTouchListener() {
             @Override
@@ -254,7 +249,7 @@ public class LiveChatRoomFragment extends Fragment implements RongIMClient.OnRec
     }
 
     @Override
-    public boolean onReceived(Message message, int left) {
+    public boolean onReceived(XYMessage message, int left) {
         Log.d(TAG, "onReceived");
         if (message.getConversationType() == conversationType && message.getTargetId().equals(targetId)) {
             liveChatListAdapter.addMessage(message);
@@ -269,7 +264,7 @@ public class LiveChatRoomFragment extends Fragment implements RongIMClient.OnRec
             return false;
         }
         String type = Integer.toString(msg.what);
-        Message message = Message.obtain(targetId, conversationType, new GiftMessage(type));
+        XYMessage message = XYMessage.obtain(targetId, conversationType, new GiftMessage(type));
         message.getContent().setUserInfo(imService.getCurrentUserInfo());
         imService.sendMessage(message, new XYIMSendMessageCallbackImpl(message), new XYIMResultCallbackImpl());
         return false;
@@ -277,8 +272,8 @@ public class LiveChatRoomFragment extends Fragment implements RongIMClient.OnRec
 
     public void onEventMainThread(BusEvent.MessageReceived event) {
         Log.d(TAG, "BusEvent.MessageReceived left = " + event.left);
-        Message msg = event.message;
-        if (targetId.equals(msg.getTargetId()) && conversationType == Conversation.ConversationType.CHATROOM) {
+        XYMessage msg = event.message;
+        if (targetId.equals(msg.getTargetId()) && conversationType == XYConversationType.CHATROOM) {
             liveChatListAdapter.addMessage(msg);
             liveChatListAdapter.notifyDataSetChanged();
             newMessage.messageArrived();
@@ -287,8 +282,8 @@ public class LiveChatRoomFragment extends Fragment implements RongIMClient.OnRec
 
     public void onEventMainThread(BusEvent.MessageSent event) {
         Log.d(TAG, "BusEvent.MessageSent");
-        Message msg = event.message;
-        if (targetId.equals(msg.getTargetId()) && conversationType == Conversation.ConversationType.CHATROOM) {
+        XYMessage msg = event.message;
+        if (targetId.equals(msg.getTargetId()) && conversationType == XYConversationType.CHATROOM) {
             int errorCode = event.code;
             if (errorCode == 0) {
                 liveChatListAdapter.addMessage(msg);

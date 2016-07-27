@@ -5,8 +5,6 @@ import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
-import io.rong.imlib.model.MessageContent;
-
 @Target(ElementType.TYPE)
 @Retention(RetentionPolicy.RUNTIME)
 public @interface TemplateTag {
@@ -48,5 +46,5 @@ public @interface TemplateTag {
 
     boolean showSummaryWithName() default true;
 
-    Class<? extends MessageContent> messageContent();
+    Class messageContent();
 }

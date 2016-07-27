@@ -1,6 +1,9 @@
 package io.rong.ui;
 
+import com.xiaoying.imapi.XYConversationType;
 import com.xiaoying.imapi.XYIMConnectCallback;
+import com.xiaoying.imapi.XYIMUserInfo;
+import com.xiaoying.imapi.model.ErrorCode;
 import com.xiaoying.imapi.service.IMService;
 
 import android.net.Uri;
@@ -11,11 +14,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
-import io.rong.util.IMUtil;
-import io.rong.imlib.RongIMClient;
-import io.rong.imlib.model.Conversation;
-import io.rong.imlib.model.UserInfo;
 import io.rong.liveapp.R;
+import io.rong.util.IMUtil;
 
 public class MainActivity extends FragmentActivity {
 
@@ -39,7 +39,7 @@ public class MainActivity extends FragmentActivity {
             @Override
             public void onClick(View view) {
                 connectServer("+3713qqWNV6z9f4ZCpzktvM4R/7aneMGEIsu/XLBJSiFJCcpHgQN50UWTjykrLEPn77MvyuRhv2L+8VU3jyYdQ=="); // 公网
-                imService.setCurrentUserInfo(new UserInfo("user1", "name1", Uri.parse(""))); // 公网
+                imService.setCurrentUserInfo(new XYIMUserInfo("user1", "name1", Uri.parse(""))); // 公网
             }
         });
 
@@ -48,7 +48,7 @@ public class MainActivity extends FragmentActivity {
             @Override
             public void onClick(View view) {
                 connectServer("QGYzwQpTQZPvaF5kWStcIXk0k60ZRpL1qDuQMag8ko3hmAxJE5B7se741P+VGDKzG7Dw/OKavOt4OvDSgIk6iw=="); // 公网
-                imService.setCurrentUserInfo(new UserInfo("user2", "name2", Uri.parse(""))); // 公网
+                imService.setCurrentUserInfo(new XYIMUserInfo("user2", "name2", Uri.parse(""))); // 公网
             }
         });
 
@@ -57,7 +57,7 @@ public class MainActivity extends FragmentActivity {
             @Override
             public void onClick(View view) {
                 connectServer("dBprC+kezixOB2dnz3F2+O1d1Wqt9AiqVLATGNTfx+OPUzoG4oG1HMajBLzpAtzeRRopWzMqRY2D2q5vKBJaKQ=="); // 公网
-                imService.setCurrentUserInfo(new UserInfo("user3", "name3", Uri.parse(""))); // 公网
+                imService.setCurrentUserInfo(new XYIMUserInfo("user3", "name3", Uri.parse(""))); // 公网
             }
         });
 
@@ -66,7 +66,7 @@ public class MainActivity extends FragmentActivity {
             @Override
             public void onClick(View view) {
                 connectServer("5N29xgzjduV0jGugKitsmnk0k60ZRpL1qDuQMag8ko3hmAxJE5B7sbw2z6OyyZ8bG7Dw/OKavOvFFhmcruGUfw=="); // 公网
-                imService.setCurrentUserInfo(new UserInfo("user4", "name4", Uri.parse(""))); // 公网
+                imService.setCurrentUserInfo(new XYIMUserInfo("user4", "name4", Uri.parse(""))); // 公网
             }
         });
     }
@@ -81,11 +81,11 @@ public class MainActivity extends FragmentActivity {
             @Override
             public void onSuccess(String userId) {
                 Log.d(TAG, "——onSuccess—-" + userId);
-                imService.startConversation(MainActivity.this, Conversation.ConversationType.CHATROOM, "chatroom002", uriEdit.getText().toString());
+                imService.startConversation(MainActivity.this, XYConversationType.CHATROOM, "chatroom002", uriEdit.getText().toString());
             }
 
             @Override
-            public void onError(RongIMClient.ErrorCode errorCode) {
+            public void onError(ErrorCode errorCode) {
                 Log.e(TAG, "——onError—-" + errorCode);
             }
         });

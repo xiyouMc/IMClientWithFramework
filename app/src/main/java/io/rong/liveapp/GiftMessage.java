@@ -1,20 +1,20 @@
 package io.rong.liveapp;
 
-import android.os.Parcel;
-import android.text.TextUtils;
+import com.xiaoying.imapi.XYIMUserInfo;
+import com.xiaoying.imapi.message.XYMessageContent;
+import com.xiaoying.imapi.message.XYMessageTag;
+import com.xiaoying.imapi.util.XYParcelUtils;
 
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import android.os.Parcel;
+import android.text.TextUtils;
+
 import java.io.UnsupportedEncodingException;
 
-import io.rong.common.ParcelUtils;
-import io.rong.imlib.MessageTag;
-import io.rong.imlib.model.MessageContent;
-import io.rong.imlib.model.UserInfo;
-
-@MessageTag(value = "RC:GiftMsg", flag = MessageTag.STATUS)
-public class GiftMessage extends MessageContent {
+@XYMessageTag(value = "RC:GiftMsg", flag = XYMessageTag.STATUS)
+public class GiftMessage extends XYMessageContent {
 
     private String type;
     private String content;
@@ -50,7 +50,7 @@ public class GiftMessage extends MessageContent {
                 content = jsonObj.optString("content");
             if (jsonObj.has("type"))
                 type = jsonObj.optString("type");
-            if(jsonObj.has("user"))
+            if (jsonObj.has("user"))
                 setUserInfo(parseJsonToUserInfo(jsonObj.getJSONObject("user")));
         } catch (JSONException e) {
             e.printStackTrace();
@@ -64,7 +64,7 @@ public class GiftMessage extends MessageContent {
             jsonObj.put("content", content);
             if (!TextUtils.isEmpty(getType()))
                 jsonObj.put("type", type);
-            if(getJSONUserInfo() != null) {
+            if (getJSONUserInfo() != null) {
                 jsonObj.putOpt("user", getJSONUserInfo());
             }
         } catch (JSONException e) {
@@ -88,13 +88,13 @@ public class GiftMessage extends MessageContent {
     public void writeToParcel(Parcel dest, int flags) {
         dest.writeString(content);
         dest.writeString(type);
-        ParcelUtils.writeToParcel(dest,getUserInfo());
+        XYParcelUtils.writeToParcel(dest, getUserInfo());
     }
 
     protected GiftMessage(Parcel in) {
         content = in.readString();
         type = in.readString();
-        setUserInfo(ParcelUtils.readFromParcel(in, UserInfo.class));
+        setUserInfo(XYParcelUtils.readFromParcel(in, XYIMUserInfo.class));
     }
 
     public static final Creator<GiftMessage> CREATOR = new Creator<GiftMessage>() {

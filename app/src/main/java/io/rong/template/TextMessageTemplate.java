@@ -1,28 +1,27 @@
 package io.rong.template;
 
 import com.xiaoying.imapi.BaseMessageTemplate;
-import com.xiaoying.imapi.UIMessage;
+import com.xiaoying.imapi.XYIMUserInfo;
 import com.xiaoying.imapi.api.TemplateTag;
+import com.xiaoying.imapi.message.UIMessage;
+import com.xiaoying.imapi.message.XYMessage;
+import com.xiaoying.imapi.message.XYTextMessage;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import io.rong.common.RLog;
-import io.rong.imlib.model.Message;
-import io.rong.imlib.model.UserInfo;
 import io.rong.liveapp.R;
-import io.rong.message.TextMessage;
-import io.rong.toolkit.emoticon.Emoji;
 
-@TemplateTag(messageContent = TextMessage.class)
+@TemplateTag(messageContent = XYTextMessage.class)
 public class TextMessageTemplate implements BaseMessageTemplate {
     private final static String TAG = "TextMessageTemplate";
 
     @Override
     public View getView(View convertView, int position, ViewGroup parent, UIMessage data) {
-        RLog.e(TAG, "getView " + position + " " + convertView);
+        Log.e(TAG, "getView " + position + " " + convertView);
         ViewHolder holder;
         if (convertView == null) {
             holder = new ViewHolder();
@@ -34,23 +33,23 @@ public class TextMessageTemplate implements BaseMessageTemplate {
             holder = (ViewHolder) convertView.getTag();
         }
 
-        Message msg = data.getMessage();
-        UserInfo info = msg.getContent().getUserInfo();
+        XYMessage msg = data.getMessage();
+        XYIMUserInfo info = msg.getContent().getUserInfo();
         if (info != null) {
             holder.username.setText(info.getName() + ":");
         } else {
             holder.username.setText(msg.getSenderUserId() + ":");
         }
 
-        if (msg.getMessageDirection() == Message.MessageDirection.SEND) {
+        if (msg.getMessageDirection() == XYMessage.MessageDirection.SEND) {
             holder.username.setTextColor(parent.getContext().getResources().getColor(R.color.live_me));
-        } else if (msg.getMessageDirection() == Message.MessageDirection.RECEIVE) {
+        } else if (msg.getMessageDirection() == XYMessage.MessageDirection.RECEIVE) {
             holder.username.setTextColor(parent.getContext().getResources().getColor(R.color.live_other));
         }
 
-        TextMessage textMsg = (TextMessage) msg.getContent();
-        CharSequence text = Emoji.ensure(parent.getContext(), textMsg.getContent());
-        holder.content.setText(text);
+        XYTextMessage textMsg = (XYTextMessage) msg.getContent();
+//        CharSequence text = XYEmoji.ensure(parent.getContext(), textMsg.getContent());
+//        holder.content.setText(text);
         return convertView;
     }
 

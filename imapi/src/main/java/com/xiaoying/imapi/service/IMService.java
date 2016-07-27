@@ -1,19 +1,18 @@
 package com.xiaoying.imapi.service;
 
 import com.xiaoying.imapi.BaseMessageTemplate;
+import com.xiaoying.imapi.XYConversationType;
 import com.xiaoying.imapi.XYIMConnectCallback;
 import com.xiaoying.imapi.XYIMOnReceiveMessageListener;
 import com.xiaoying.imapi.XYIMResultCallback;
 import com.xiaoying.imapi.XYIMSendMessageCallback;
+import com.xiaoying.imapi.XYIMUserInfo;
 import com.xiaoying.imapi.XYOperationCallback;
 import com.xiaoying.imapi.api.UserInfoProvider;
+import com.xiaoying.imapi.message.XYMessage;
+import com.xiaoying.imapi.message.XYMessageContent;
 
 import android.content.Context;
-
-import io.rong.imlib.model.Conversation;
-import io.rong.imlib.model.Message;
-import io.rong.imlib.model.MessageContent;
-import io.rong.imlib.model.UserInfo;
 
 /**
  * Created by xiyoumc on 16/7/22.
@@ -27,23 +26,23 @@ public interface IMService {
 
     void logout();
 
-    void startConversation(Context context, Conversation.ConversationType conversationType, String targetId, String liveUrl);
+    void startConversation(Context context, XYConversationType conversationType, String targetId, String liveUrl);
 
-    void registerMessageType(Class<? extends MessageContent> messageContentClass);
+    void registerMessageType(Class<? extends XYMessageContent> messageContentClass);
 
     void registerMessageTemplate(BaseMessageTemplate template);
 
-    BaseMessageTemplate getMessageTemplate(Class<? extends MessageContent> messageContent);
+    BaseMessageTemplate getMessageTemplate(Class<? extends XYMessageContent> messageContent);
 
     void setUserInfoProvider(UserInfoProvider provider);
 
-    UserInfo getCurrentUserInfo();
+    XYIMUserInfo getCurrentUserInfo();
 
-    void sendMessage(final Message msg, XYIMSendMessageCallback callback, XYIMResultCallback<Message> result);
+    void sendMessage(final XYMessage msg, XYIMSendMessageCallback callback, XYIMResultCallback<XYMessage> result);
 
     void registerMessageEvent(XYIMOnReceiveMessageListener listener);
 
-    void setCurrentUserInfo(UserInfo userInfo);
+    void setCurrentUserInfo(XYIMUserInfo userInfo);
 
     void joinChatRoom(final String chatroomId, final int defMessageCount, final XYOperationCallback callback);
 

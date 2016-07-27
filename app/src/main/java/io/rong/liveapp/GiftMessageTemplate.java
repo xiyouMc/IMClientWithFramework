@@ -1,22 +1,21 @@
 package io.rong.liveapp;
 
 import com.xiaoying.imapi.BaseMessageTemplate;
-import com.xiaoying.imapi.UIMessage;
+import com.xiaoying.imapi.XYIMUserInfo;
 import com.xiaoying.imapi.api.TemplateTag;
+import com.xiaoying.imapi.message.UIMessage;
+import com.xiaoying.imapi.message.XYMessage;
 
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.text.SpannableStringBuilder;
 import android.text.Spanned;
 import android.text.style.ImageSpan;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
-
-import io.rong.common.RLog;
-import io.rong.imlib.model.Message;
-import io.rong.imlib.model.UserInfo;
 
 @TemplateTag(messageContent = GiftMessage.class)
 public class GiftMessageTemplate implements BaseMessageTemplate {
@@ -24,7 +23,7 @@ public class GiftMessageTemplate implements BaseMessageTemplate {
 
     @Override
     public View getView(View convertView, int position, ViewGroup parent, UIMessage data) {
-        RLog.e(TAG, "getView " + position + " " + convertView);
+        Log.e(TAG, "getView " + position + " " + convertView);
         ViewHolder holder;
         if (convertView == null) {
             holder = new ViewHolder();
@@ -35,8 +34,8 @@ public class GiftMessageTemplate implements BaseMessageTemplate {
             holder = (ViewHolder) convertView.getTag();
         }
 
-        Message msg = data.getMessage();
-        UserInfo info = msg.getContent().getUserInfo();
+        XYMessage msg = data.getMessage();
+        XYIMUserInfo info = msg.getContent().getUserInfo();
         String username;
         if (info != null) {
             username = info.getName();

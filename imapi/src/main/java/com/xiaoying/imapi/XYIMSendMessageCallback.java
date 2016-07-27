@@ -1,6 +1,6 @@
 package com.xiaoying.imapi;
 
-import io.rong.imlib.RongIMClient;
+import com.xiaoying.imapi.model.ErrorCode;
 
 /**
  * Created by Administrator on 2016/6/7.
@@ -8,5 +8,5 @@ import io.rong.imlib.RongIMClient;
 public interface XYIMSendMessageCallback {
     public void onSuccess(Integer integer);
 
-    public void onError(Integer messageId, RongIMClient.ErrorCode e);
+    public void onError(Integer messageId, ErrorCode e);
 }

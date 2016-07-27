@@ -1,5 +1,7 @@
 package com.xiaoying.imapi;
 
+import com.xiaoying.imapi.message.UIMessage;
+
 import android.view.View;
 import android.view.ViewGroup;
 

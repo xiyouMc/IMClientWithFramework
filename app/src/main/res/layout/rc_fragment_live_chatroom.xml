@@ -84,7 +84,7 @@
                 android:text="状态"/>
     </LinearLayout>
 
-    <io.rong.toolkit.RongInputBoard
+    <EditText
             android:id="@+id/input_board"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

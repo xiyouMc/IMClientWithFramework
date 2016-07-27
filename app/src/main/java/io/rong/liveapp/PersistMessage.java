@@ -1,19 +1,19 @@
 package io.rong.liveapp;
 
-import android.os.Parcel;
+import com.xiaoying.imapi.XYIMUserInfo;
+import com.xiaoying.imapi.message.XYMessageContent;
+import com.xiaoying.imapi.message.XYMessageTag;
+import com.xiaoying.imapi.util.XYParcelUtils;
 
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import android.os.Parcel;
+
 import java.io.UnsupportedEncodingException;
 
-import io.rong.common.ParcelUtils;
-import io.rong.imlib.MessageTag;
-import io.rong.imlib.model.MessageContent;
-import io.rong.imlib.model.UserInfo;
-
-@MessageTag(value = "RC:PersistMsg", flag = MessageTag.ISPERSISTED)
-public class PersistMessage extends MessageContent {
+@XYMessageTag(value = "RC:PersistMsg", flag = XYMessageTag.ISPERSISTED)
+public class PersistMessage extends XYMessageContent {
 
     private String content;
 
@@ -44,7 +44,7 @@ public class PersistMessage extends MessageContent {
             JSONObject jsonObj = new JSONObject(jsonStr);
             if (jsonObj.has("content"))
                 content = jsonObj.optString("content");
-            if(jsonObj.has("user"))
+            if (jsonObj.has("user"))
                 setUserInfo(parseJsonToUserInfo(jsonObj.getJSONObject("user")));
         } catch (JSONException e) {
             e.printStackTrace();
@@ -56,7 +56,7 @@ public class PersistMessage extends MessageContent {
         JSONObject jsonObj = new JSONObject();
         try {
             jsonObj.put("content", content);
-            if(getJSONUserInfo() != null) {
+            if (getJSONUserInfo() != null) {
                 jsonObj.putOpt("user", getJSONUserInfo());
             }
         } catch (JSONException e) {
@@ -79,12 +79,12 @@ public class PersistMessage extends MessageContent {
     @Override
     public void writeToParcel(Parcel dest, int flags) {
         dest.writeString(content);
-        ParcelUtils.writeToParcel(dest,getUserInfo());
+        XYParcelUtils.writeToParcel(dest, getUserInfo());
     }
 
     protected PersistMessage(Parcel in) {
         content = in.readString();
-        setUserInfo(ParcelUtils.readFromParcel(in, UserInfo.class));
+        setUserInfo(XYParcelUtils.readFromParcel(in, XYIMUserInfo.class));
     }
 
     public static final Creator<PersistMessage> CREATOR = new Creator<PersistMessage>() {

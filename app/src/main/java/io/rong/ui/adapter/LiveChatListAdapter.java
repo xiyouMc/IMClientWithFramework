@@ -1,9 +1,11 @@
 package io.rong.ui.adapter;
 
 import com.xiaoying.imapi.BaseMessageTemplate;
-import com.xiaoying.imapi.UIMessage;
+import com.xiaoying.imapi.message.UIMessage;
+import com.xiaoying.imapi.message.XYMessage;
 import com.xiaoying.imapi.service.IMService;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,11 +14,9 @@ import android.widget.BaseAdapter;
 import java.util.ArrayList;
 import java.util.List;
 
-import io.rong.util.IMUtil;
-import io.rong.common.RLog;
-import io.rong.imlib.model.Message;
 import io.rong.liveapp.R;
 import io.rong.ui.BaseContainerView;
+import io.rong.util.IMUtil;
 
 public class LiveChatListAdapter extends BaseAdapter {
 
@@ -24,7 +24,7 @@ public class LiveChatListAdapter extends BaseAdapter {
 
     private List<UIMessage> uiMessageList = new ArrayList<>();
 
-    public void addMessage(Message message) {
+    public void addMessage(XYMessage message) {
         uiMessageList.add(UIMessage.obtain(message));
     }
 
@@ -45,7 +45,7 @@ public class LiveChatListAdapter extends BaseAdapter {
 
     @Override
     public View getView(final int position, View convertView, ViewGroup parent) {
-        RLog.d(TAG, "getView position = " + position + ", convertView = " + convertView);
+        Log.d(TAG, "getView position = " + position + ", convertView = " + convertView);
         ViewHolder holder;
         final UIMessage data = uiMessageList.get(position);
         if (convertView == null) {
@@ -57,7 +57,7 @@ public class LiveChatListAdapter extends BaseAdapter {
             holder = (ViewHolder) convertView.getTag();
         }
 
-        Message msg = data.getMessage();
+        XYMessage msg = data.getMessage();
         IMService imService = IMUtil.getMicroApplicationContext().findServiceByInterface(IMService.class.getName());
         if (imService == null) {
             return null;

@@ -41,7 +41,7 @@ android {
 
 apply plugin: 'android-native-dependencies'
 native_dependencies {
-    artifact 'com.vivavideo.mobile:imcore:1.39'
+    artifact 'com.vivavideo.mobile:imcore:1.39.1672702'
 }
 
 

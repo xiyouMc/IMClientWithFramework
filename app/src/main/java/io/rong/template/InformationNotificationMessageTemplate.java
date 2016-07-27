@@ -1,26 +1,26 @@
 package io.rong.template;
 
 import com.xiaoying.imapi.BaseMessageTemplate;
-import com.xiaoying.imapi.UIMessage;
 import com.xiaoying.imapi.api.TemplateTag;
+import com.xiaoying.imapi.message.UIMessage;
+import com.xiaoying.imapi.message.XYMessage;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import io.rong.common.RLog;
-import io.rong.imlib.model.Message;
 import io.rong.liveapp.R;
-import io.rong.message.InformationNotificationMessage;
+import io.rong.ui.message.XYInformationNotificationMessage;
 
-@TemplateTag(messageContent = InformationNotificationMessage.class)
+@TemplateTag(messageContent = XYInformationNotificationMessage.class)
 public class InformationNotificationMessageTemplate implements BaseMessageTemplate {
-    private final static String TAG = "InformationNotificationMessageTemplate";
+    private final static String TAG = "Information";
 
     @Override
     public View getView(View convertView, int position, ViewGroup parent, UIMessage data) {
-        RLog.e( TAG, "getView " + position + " " + convertView);
+        Log.e(TAG, "getView " + position + " " + convertView);
         ViewHolder holder;
         if (convertView == null) {
             holder = new ViewHolder();
@@ -31,8 +31,8 @@ public class InformationNotificationMessageTemplate implements BaseMessageTempla
             holder = (ViewHolder) convertView.getTag();
         }
 
-        Message msg = data.getMessage();
-        InformationNotificationMessage infoMsg = (InformationNotificationMessage) msg.getContent();
+        XYMessage msg = data.getMessage();
+        XYInformationNotificationMessage infoMsg = (XYInformationNotificationMessage) msg.getContent();
         holder.content.setText(infoMsg.getMessage());
         return convertView;
     }
