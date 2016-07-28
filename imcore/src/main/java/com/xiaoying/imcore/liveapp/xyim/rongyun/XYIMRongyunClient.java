@@ -6,8 +6,10 @@ import com.xiaoying.imapi.XYIMConnectCallback;
 import com.xiaoying.imapi.XYIMOnReceiveMessageListener;
 import com.xiaoying.imapi.XYIMResultCallback;
 import com.xiaoying.imapi.XYIMSendMessageCallback;
+import com.xiaoying.imapi.message.XYEmoji;
 import com.xiaoying.imapi.message.XYMessage;
 import com.xiaoying.imapi.message.XYMessageContent;
+import com.xiaoying.imapi.message.XYTextMessage;
 import com.xiaoying.imapi.model.ErrorCode;
 
 import android.content.Context;
@@ -17,6 +19,7 @@ import io.rong.imlib.RongIMClient;
 import io.rong.imlib.model.Conversation;
 import io.rong.imlib.model.Message;
 import io.rong.imlib.model.MessageContent;
+import io.rong.message.TextMessage;
 
 /**
  * Created by Administrator on 2016/6/7.
@@ -25,6 +28,7 @@ public class XYIMRongyunClient extends XYIMAbstractClient {
 
     static XYIMRongyunClient mClient;
     static RongIMClient RongIMClientInstance;
+    private Context context;
 
     public static XYIMRongyunClient getInstance() {
         if (null == mClient) {
@@ -40,11 +44,13 @@ public class XYIMRongyunClient extends XYIMAbstractClient {
     @Override
     public void init(Context context, String appKey) {
         RongIMClient.init(context, appKey);
+        this.context = context;
     }
 
     @Override
     public void init(Context context) {
         RongIMClient.init(context);
+        this.context = context;
     }
 
     public void connect(String token, final XYIMConnectCallback callback) {
@@ -113,24 +119,6 @@ public class XYIMRongyunClient extends XYIMAbstractClient {
                 resultCallback.onError(ErrorCode.valueOf(e.getValue()));
             }
         };
-////        RongMessage rongMessage = RongMessage.obtain(message.getContent().get);
-//        Message msg = Message.obtain(message.getTargetId(), Conversation.ConversationType.setValue(message.getConversationType().getValue()),
-//                new MessageContent() {
-//                    @Override
-//                    public byte[] encode() {
-//                        return new byte[0];
-//                    }
-//
-//                    @Override
-//                    public int describeContents() {
-//                        return 0;
-//                    }
-//
-//                    @Override
-//                    public void writeToParcel(Parcel parcel, int i) {
-//
-//                    }
-//                });
         RongMessage rongMessage = RongMessage.obtain(message.getContent().getMessage());
         Message msg = Message.obtain(message.getTargetId(), Conversation.ConversationType.setValue(message.getConversationType().getValue()),
                 rongMessage);
@@ -147,29 +135,12 @@ public class XYIMRongyunClient extends XYIMAbstractClient {
         RongIMClient.setOnReceiveMessageListener(new RongIMClient.OnReceiveMessageListener() {
             @Override
             public boolean onReceived(final Message message, int left) {
-                listener.onReceived(XYMessage.obtain(message.getTargetId(), XYConversationType.setValue(message.getConversationType().getValue()), new XYMessageContent() {
-                    private MessageContent mContent = message.getContent();
 
-                    @Override
-                    public byte[] encode() {
-                        return mContent.encode();
-                    }
-
-                    @Override
-                    public int describeContents() {
-                        return mContent.describeContents();
-                    }
-
-                    @Override
-                    public void writeToParcel(Parcel parcel, int i) {
-                        mContent.writeToParcel(parcel, i);
-                    }
-
-                    @Override
-                    public String getMessage() {
-                        return null;
-                    }
-                }), left);
+                RongMessage textMsg = (RongMessage) message.getContent();
+                CharSequence text = XYEmoji.ensure(context,textMsg.getMessage());
+                XYTextMessage xyTextMessage = XYTextMessage.obtain(text.toString());
+                final XYMessage msg = XYMessage.obtain(message.getTargetId(), XYConversationType.setValue(message.getConversationType().getValue()), xyTextMessage);
+                listener.onReceived(msg, left);
                 return false;
             }
         });

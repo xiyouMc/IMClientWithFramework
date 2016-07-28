@@ -18,10 +18,15 @@ import io.rong.imlib.model.UserInfo;
 public class RongMessageContent extends MessageContent {
     private Class<? extends XYMessageContent> mXYMessageContent;
     private XYMessageContent mMessageContent;
+    private MessageContent mContent;
 
     public RongMessageContent(Class<? extends XYMessageContent> mXYMessageContent) {
         super();
         this.mXYMessageContent = mXYMessageContent;
+    }
+
+    public RongMessageContent(MessageContent messageContent) {
+        this.mContent = messageContent;
     }
 
     public RongMessageContent(XYMessageContent content) {
@@ -39,6 +44,9 @@ public class RongMessageContent extends MessageContent {
             XYIMUserInfo userInfo = this.mMessageContent.getUserInfo();
             return new UserInfo(userInfo.getUserId(), userInfo.getName(), userInfo.getPortraitUri());
         }
+        if (this.mContent != null) {
+            return mContent.getUserInfo();
+        }
         return null;
     }
 
@@ -49,27 +57,36 @@ public class RongMessageContent extends MessageContent {
     @Override
     public void setUserInfo(UserInfo info) {
         super.setUserInfo(info);
-        if (this.mMessageContent != null){
+        if (this.mMessageContent != null) {
             mMessageContent.setUserInfo(new XYIMUserInfo(info.getUserId(), info.getName(), info.getPortraitUri()));
+        }
+        if (this.mContent != null) {
+            this.mContent.setUserInfo(info);
         }
 //
     }
 
     @Override
     public JSONObject getJSONUserInfo() {
-        if (this.mMessageContent != null){
+        if (this.mMessageContent != null) {
             return this.mMessageContent.getJSONUserInfo();
+        }
+        if (this.mContent != null) {
+            this.mContent.getJSONUserInfo();
         }
         return null;
     }
 
     @Override
     public UserInfo parseJsonToUserInfo(JSONObject jsonObj) {
-        if (this.mMessageContent != null){
+        if (this.mMessageContent != null) {
             XYIMUserInfo userInfo = mMessageContent.parseJsonToUserInfo(jsonObj);
-
+            return new UserInfo(userInfo.getUserId(), userInfo.getName(), userInfo.getPortraitUri());
         }
-//
+        if (this.mContent != null) {
+            return this.mContent.parseJsonToUserInfo(jsonObj);
+        }
+
         return null;
     }
 
