@@ -27,13 +27,13 @@ public class BaseContainerView extends LinearLayout {
          * 根据模板名字检查是否回收 view，提升性能.
          * objectName 作为该模板的唯一 name.
          */
-        if(this.objectName == null || !this.objectName.equals(objectName)) {
+        if (this.objectName == null || !this.objectName.equals(objectName)) {
             removeAllViews();
             convertView = template.getView(null, position, this, uiMessage);
         } else {
             convertView = template.getView(convertView, position, this, uiMessage);
         }
-        if(convertView.getParent() == null) {
+        if (convertView.getParent() == null) {
             addView(convertView);
         }
         this.objectName = objectName;

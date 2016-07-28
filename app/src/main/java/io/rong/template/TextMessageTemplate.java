@@ -4,6 +4,7 @@ import com.xiaoying.imapi.BaseMessageTemplate;
 import com.xiaoying.imapi.XYIMUserInfo;
 import com.xiaoying.imapi.api.TemplateTag;
 import com.xiaoying.imapi.message.UIMessage;
+import com.xiaoying.imapi.message.XYEmoji;
 import com.xiaoying.imapi.message.XYMessage;
 import com.xiaoying.imapi.message.XYTextMessage;
 
@@ -14,6 +15,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import io.rong.liveapp.R;
+import io.rong.toolkit.emoticon.Emoji;
 
 @TemplateTag(messageContent = XYTextMessage.class)
 public class TextMessageTemplate implements BaseMessageTemplate {
@@ -48,8 +50,8 @@ public class TextMessageTemplate implements BaseMessageTemplate {
         }
 
         XYTextMessage textMsg = (XYTextMessage) msg.getContent();
-//        CharSequence text = XYEmoji.ensure(parent.getContext(), textMsg.getContent());
-//        holder.content.setText(text);
+        CharSequence text = XYEmoji.ensure(parent.getContext(), textMsg.getContent());
+        holder.content.setText(text);
         return convertView;
     }
 

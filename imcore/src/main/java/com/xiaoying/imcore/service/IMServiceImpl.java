@@ -13,17 +13,16 @@ import com.xiaoying.imapi.message.XYMessage;
 import com.xiaoying.imapi.message.XYMessageContent;
 import com.xiaoying.imapi.model.ErrorCode;
 import com.xiaoying.imapi.service.IMService;
+import com.xiaoying.imcore.liveapp.xyim.rongyun.RongMessage;
 import com.xiaoying.imcore.liveapp.xyim.rongyun.RongMessageContent;
 import com.xiaoying.imcore.livekit.RongIM;
 
 import android.content.Context;
-import android.os.Parcel;
 import android.util.Log;
 
 import io.rong.imlib.RongIMClient;
 import io.rong.imlib.model.Conversation;
 import io.rong.imlib.model.Message;
-import io.rong.imlib.model.MessageContent;
 import io.rong.imlib.model.UserInfo;
 
 /**
@@ -58,6 +57,7 @@ public class IMServiceImpl implements IMService {
     @Override
     public void registerMessageType(Class<? extends XYMessageContent> messageContentClass) {
         RongIM.getInstance().registerMessageType(RongMessageContent.class);
+        RongIM.getInstance().registerMessageType(RongMessage.class);
     }
 
     @Override
