@@ -12,7 +12,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import io.rong.liveapp.R;
-import com.xiaoying.imapi.message.XYInformationNotificationMessage;
+import io.rong.liveapp.XYInformationNotificationMessage;
 
 @TemplateTag(messageContent = XYInformationNotificationMessage.class)
 public class InformationNotificationMessageTemplate implements BaseMessageTemplate {

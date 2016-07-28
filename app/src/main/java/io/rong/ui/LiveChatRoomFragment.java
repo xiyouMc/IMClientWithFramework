@@ -7,6 +7,7 @@ import com.xiaoying.imapi.XYIMUserInfo;
 import com.xiaoying.imapi.XYOperationCallback;
 import com.xiaoying.imapi.api.BusEvent;
 import com.xiaoying.imapi.message.XYMessage;
+import com.xiaoying.imapi.message.XYTextMessage;
 import com.xiaoying.imapi.model.ErrorCode;
 import com.xiaoying.imapi.service.IMService;
 
@@ -31,7 +32,7 @@ import io.rong.listener.XYIMSendMessageCallbackImpl;
 import io.rong.liveapp.GiftMessage;
 import io.rong.liveapp.R;
 import io.rong.ui.adapter.LiveChatListAdapter;
-import com.xiaoying.imapi.message.XYInformationNotificationMessage;
+import io.rong.liveapp.XYInformationNotificationMessage;
 import io.rong.util.IMUtil;
 
 public class LiveChatRoomFragment extends Fragment implements XYIMOnReceiveMessageListener, Handler.Callback {
@@ -94,7 +95,7 @@ public class LiveChatRoomFragment extends Fragment implements XYIMOnReceiveMessa
                 XYIMUserInfo info = imService.getCurrentUserInfo();
                 String infoText = String.format(getResources().getString(R.string.live_join_chatroom), info.getName());
                 Log.d(TAG, "infoText = " + infoText);
-                XYInformationNotificationMessage content = XYInformationNotificationMessage.obtain(infoText);
+                XYTextMessage content = XYTextMessage.obtain(infoText);
                 XYMessage msg = XYMessage.obtain(targetId, conversationType, content);
                 imService.sendMessage(msg, new XYIMSendMessageCallbackImpl(msg), new XYIMResultCallback<XYMessage>() {
                     @Override
@@ -104,7 +105,7 @@ public class LiveChatRoomFragment extends Fragment implements XYIMOnReceiveMessa
 
                     @Override
                     public void onError(ErrorCode var1) {
-
+                        Log.e(TAG,"error:" + var1.getValue() + " " + var1.getMessage());
                     }
                 });
             }

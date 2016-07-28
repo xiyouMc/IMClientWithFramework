@@ -113,6 +113,24 @@ public class XYIMRongyunClient extends XYIMAbstractClient {
                 resultCallback.onError(ErrorCode.valueOf(e.getValue()));
             }
         };
+////        RongMessage rongMessage = RongMessage.obtain(message.getContent().get);
+//        Message msg = Message.obtain(message.getTargetId(), Conversation.ConversationType.setValue(message.getConversationType().getValue()),
+//                new MessageContent() {
+//                    @Override
+//                    public byte[] encode() {
+//                        return new byte[0];
+//                    }
+//
+//                    @Override
+//                    public int describeContents() {
+//                        return 0;
+//                    }
+//
+//                    @Override
+//                    public void writeToParcel(Parcel parcel, int i) {
+//
+//                    }
+//                });
         RongMessage rongMessage = RongMessage.obtain(message.getContent().getMessage());
         Message msg = Message.obtain(message.getTargetId(), Conversation.ConversationType.setValue(message.getConversationType().getValue()),
                 rongMessage);

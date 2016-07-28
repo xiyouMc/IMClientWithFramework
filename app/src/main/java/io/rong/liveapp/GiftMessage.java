@@ -2,7 +2,6 @@ package io.rong.liveapp;
 
 import com.xiaoying.imapi.XYIMUserInfo;
 import com.xiaoying.imapi.message.XYMessageContent;
-import com.xiaoying.imapi.message.XYMessageTag;
 import com.xiaoying.imapi.util.XYParcelUtils;
 
 import org.json.JSONException;
@@ -13,7 +12,9 @@ import android.text.TextUtils;
 
 import java.io.UnsupportedEncodingException;
 
-@XYMessageTag(value = "RC:GiftMsg", flag = XYMessageTag.STATUS)
+import io.rong.imlib.MessageTag;
+
+@MessageTag(value = "RC:GiftMsg", flag = MessageTag.STATUS)
 public class GiftMessage extends XYMessageContent {
 
     private String type;

@@ -13,6 +13,7 @@ import com.xiaoying.imapi.message.XYMessage;
 import com.xiaoying.imapi.message.XYMessageContent;
 import com.xiaoying.imapi.model.ErrorCode;
 import com.xiaoying.imapi.service.IMService;
+import com.xiaoying.imcore.liveapp.xyim.rongyun.RongMessageContent;
 import com.xiaoying.imcore.livekit.RongIM;
 
 import android.content.Context;
@@ -55,8 +56,8 @@ public class IMServiceImpl implements IMService {
     }
 
     @Override
-    public void registerMessageType(Class messageContentClass) {
-        RongIM.getInstance().registerMessageType(messageContentClass);
+    public void registerMessageType(Class<? extends XYMessageContent> messageContentClass) {
+        RongIM.getInstance().registerMessageType(RongMessageContent.class);
     }
 
     @Override
@@ -82,24 +83,7 @@ public class IMServiceImpl implements IMService {
 
     @Override
     public void sendMessage(final XYMessage msg, XYIMSendMessageCallback callback, final XYIMResultCallback<XYMessage> result) {
-        RongIM.getInstance().sendMessage(Message.obtain(msg.getTargetId(), Conversation.ConversationType.setValue(msg.getConversationType().getValue()), new MessageContent() {
-            XYMessageContent mContent = msg.getContent();
-
-            @Override
-            public byte[] encode() {
-                return mContent.encode();
-            }
-
-            @Override
-            public int describeContents() {
-                return mContent.describeContents();
-            }
-
-            @Override
-            public void writeToParcel(Parcel parcel, int i) {
-                mContent.writeToParcel(parcel, i);
-            }
-        }), callback, new XYIMResultCallback<Message>() {
+        RongIM.getInstance().sendMessage(msg, callback, new XYIMResultCallback<Message>() {
             @Override
             public void onSuccess(XYMessage message) {
                 result.onSuccess(message);

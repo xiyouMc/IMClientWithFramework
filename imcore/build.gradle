@@ -116,11 +116,11 @@ allprojects {
 }
 
 dependencies {
-    provided fileTree(dir: 'libs', include: ['*.jar'])
+//    provided fileTree(dir: 'libs', include: ['*.jar'])
     compile 'com.android.support:appcompat-v7:22.1.0'
 //    provided 'com.dynamicload.framework:framework:4.2.160721'
     compile files('libs/ToolKit.jar')
-    provided 'com.vivavideo.mobile:imapi:1.61.1672704'
-//    provided project(':imapi')
+//    provided 'com.vivavideo.mobile:imapi:1.61.1672704'
+    provided project(':imapi')
 //    provided files('libs/eventbus-2.4.0.jar')
 }

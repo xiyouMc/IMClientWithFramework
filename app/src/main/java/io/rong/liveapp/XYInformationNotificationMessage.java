@@ -1,6 +1,7 @@
-package com.xiaoying.imapi.message;
+package io.rong.liveapp;
 
 import com.xiaoying.imapi.XYIMUserInfo;
+import com.xiaoying.imapi.message.XYMessageContent;
 import com.xiaoying.imapi.util.XYParcelUtils;
 
 import org.json.JSONException;
@@ -12,10 +13,12 @@ import android.util.Log;
 
 import java.io.UnsupportedEncodingException;
 
+import io.rong.imlib.MessageTag;
+
 /**
  * Created by xiyoumc on 16/7/27.
  */
-@XYMessageTag(value = "RC:InformationNotificationMsg", flag = XYMessageTag.STATUS)
+@MessageTag(value = "RC:InformationNotificationMsg", flag = MessageTag.STATUS)
 public class XYInformationNotificationMessage extends XYMessageContent {
     private static final String TAG = "InformationNotificationMessage";
     private String message;

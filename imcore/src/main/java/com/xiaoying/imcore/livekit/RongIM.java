@@ -1,7 +1,6 @@
 package com.xiaoying.imcore.livekit;
 
 import com.xiaoying.imapi.BaseMessageTemplate;
-import com.xiaoying.imapi.XYConversationType;
 import com.xiaoying.imapi.XYIMAbstractClient;
 import com.xiaoying.imapi.XYIMConnectCallback;
 import com.xiaoying.imapi.XYIMOnReceiveMessageListener;
@@ -11,13 +10,11 @@ import com.xiaoying.imapi.XYIMUserInfo;
 import com.xiaoying.imapi.api.TemplateTag;
 import com.xiaoying.imapi.api.UserInfoProvider;
 import com.xiaoying.imapi.message.XYMessage;
-import com.xiaoying.imapi.message.XYMessageContent;
 import com.xiaoying.imcore.liveapp.xyim.rongyun.XYIMRongyunClient;
 
 import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
-import android.os.Parcel;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -115,7 +112,7 @@ public class RongIM {
         currentUserInfo = info;
     }
 
-    public void sendMessage(final Message msg, XYIMSendMessageCallback callback, XYIMResultCallback<Message> result) {
+    public void sendMessage(final XYMessage msg, XYIMSendMessageCallback callback, XYIMResultCallback<Message> result) {
 //        XYIMSendMessageCallback callback = new XYIMSendMessageCallback() {
 //            @Override
 //            public void onSuccess(Integer integer) {
@@ -136,29 +133,7 @@ public class RongIM {
 //            public void onError(RongIMClient.ErrorCode e) {
 //            }
 //        };
-        XYIMRongyunClient.getInstance().sendMessage(XYMessage.obtain(msg.getTargetId(), XYConversationType.setValue(msg.getConversationType().getValue()), new XYMessageContent() {
-            MessageContent mContent = msg.getContent();
-
-            @Override
-            public byte[] encode() {
-                return mContent.encode();
-            }
-
-            @Override
-            public int describeContents() {
-                return mContent.describeContents();
-            }
-
-            @Override
-            public void writeToParcel(Parcel parcel, int i) {
-                mContent.writeToParcel(parcel, i);
-            }
-
-            @Override
-            public String getMessage() {
-                return null;
-            }
-        }), null, null, callback, result);
+        XYIMRongyunClient.getInstance().sendMessage(msg, null, null, callback, result);
     }
 
     public void registerMessageEvent(XYIMOnReceiveMessageListener listener) {

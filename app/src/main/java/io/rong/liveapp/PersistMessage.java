@@ -2,7 +2,6 @@ package io.rong.liveapp;
 
 import com.xiaoying.imapi.XYIMUserInfo;
 import com.xiaoying.imapi.message.XYMessageContent;
-import com.xiaoying.imapi.message.XYMessageTag;
 import com.xiaoying.imapi.util.XYParcelUtils;
 
 import org.json.JSONException;
@@ -12,7 +11,9 @@ import android.os.Parcel;
 
 import java.io.UnsupportedEncodingException;
 
-@XYMessageTag(value = "RC:PersistMsg", flag = XYMessageTag.ISPERSISTED)
+import io.rong.imlib.MessageTag;
+
+@MessageTag(value = "RC:PersistMsg", flag = MessageTag.ISPERSISTED)
 public class PersistMessage extends XYMessageContent {
 
     private String content;
