@@ -19,7 +19,6 @@ import io.rong.imlib.RongIMClient;
 import io.rong.imlib.model.Conversation;
 import io.rong.imlib.model.Message;
 import io.rong.imlib.model.MessageContent;
-import io.rong.message.TextMessage;
 
 /**
  * Created by Administrator on 2016/6/7.
@@ -137,9 +136,20 @@ public class XYIMRongyunClient extends XYIMAbstractClient {
             public boolean onReceived(final Message message, int left) {
 
                 RongMessage textMsg = (RongMessage) message.getContent();
-                CharSequence text = XYEmoji.ensure(context,textMsg.getMessage());
+                CharSequence text = XYEmoji.ensure(context, textMsg.getMessage());
                 XYTextMessage xyTextMessage = XYTextMessage.obtain(text.toString());
                 final XYMessage msg = XYMessage.obtain(message.getTargetId(), XYConversationType.setValue(message.getConversationType().getValue()), xyTextMessage);
+                msg.setSenderUserId(message.getSenderUserId());
+                msg.setExtra(message.getExtra());
+                msg.setMessageDirection(XYMessage.MessageDirection.setValue(message.getMessageDirection().getValue()));
+                msg.setMessageId(message.getMessageId());
+                msg.setObjectName(message.getObjectName());
+                msg.setReceivedTime(message.getReceivedTime());
+                msg.setReceivedStatus(new XYMessage.ReceivedStatus(message.getReceivedStatus().getFlag()));
+                msg.setSentStatus(XYMessage.SentStatus.setValue(message.getSentStatus().getValue()));
+                msg.setSentTime(message.getSentTime());
+                msg.setUId(message.getUId());
+                msg.setTargetId(message.getTargetId());
                 listener.onReceived(msg, left);
                 return false;
             }

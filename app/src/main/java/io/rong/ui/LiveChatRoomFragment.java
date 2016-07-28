@@ -17,6 +17,7 @@ import android.os.Handler;
 import android.support.v4.app.Fragment;
 import android.util.Log;
 import android.view.Gravity;
+import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
@@ -32,7 +33,6 @@ import io.rong.listener.XYIMSendMessageCallbackImpl;
 import io.rong.liveapp.GiftMessage;
 import io.rong.liveapp.R;
 import io.rong.ui.adapter.LiveChatListAdapter;
-import io.rong.liveapp.XYInformationNotificationMessage;
 import io.rong.util.IMUtil;
 
 public class LiveChatRoomFragment extends Fragment implements XYIMOnReceiveMessageListener, Handler.Callback {
@@ -105,7 +105,7 @@ public class LiveChatRoomFragment extends Fragment implements XYIMOnReceiveMessa
 
                     @Override
                     public void onError(ErrorCode var1) {
-                        Log.e(TAG,"error:" + var1.getValue() + " " + var1.getMessage());
+                        Log.e(TAG, "error:" + var1.getValue() + " " + var1.getMessage());
                     }
                 });
             }
@@ -116,6 +116,37 @@ public class LiveChatRoomFragment extends Fragment implements XYIMOnReceiveMessa
             }
         });
 
+        rongInputBoard.setOnEditorActionListener(new TextView.OnEditorActionListener() {
+            @Override
+            public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
+                if (event.getKeyCode() == KeyEvent.KEYCODE_ENTER) {
+                    String text = rongInputBoard.getText().toString();
+                    if (imService == null || text.isEmpty()) {
+                        return false;
+                    }
+                    XYTextMessage content = XYTextMessage.obtain(text.trim());
+                    XYMessage msg = XYMessage.obtain(targetId, conversationType, content);
+
+                    XYIMUserInfo myInfo = imService.getCurrentUserInfo();
+                    msg.getContent().setUserInfo(myInfo);
+                    msg.setMessageDirection(XYMessage.MessageDirection.SEND);
+                    imService.sendMessage(msg, new XYIMSendMessageCallbackImpl(msg), new XYIMResultCallback<XYMessage>() {
+                        @Override
+                        public void onSuccess(XYMessage message) {
+                            Log.d(TAG, "message:" + message.getContent());
+                        }
+
+                        @Override
+                        public void onError(ErrorCode var1) {
+                            Log.e(TAG, "error:" + var1.getValue() + " " + var1.getMessage());
+                        }
+                    });
+                    rongInputBoard.setText("");
+                    return true;
+                }
+                return false;
+            }
+        });
 //        rongInputBoard.setInputBoardClickListener(new IInputBoardClickListener() {
 //            @Override
 //            public void onSendToggleClick(View v, String text) {

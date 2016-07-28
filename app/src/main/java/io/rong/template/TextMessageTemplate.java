@@ -39,7 +39,7 @@ public class TextMessageTemplate implements BaseMessageTemplate {
         if (info != null) {
             holder.username.setText(info.getName() + ":");
         } else {
-            holder.username.setText(msg.getSenderUserId() + ":");
+            holder.username.setText(msg.getSenderUserId() == null ? "系统消息" : msg.getSenderUserId() + ":");
         }
 
         if (msg.getMessageDirection() == XYMessage.MessageDirection.SEND) {
