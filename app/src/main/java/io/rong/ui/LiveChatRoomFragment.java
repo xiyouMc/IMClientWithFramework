@@ -2,6 +2,7 @@ package io.rong.ui;
 
 import com.xiaoying.imapi.XYConversationType;
 import com.xiaoying.imapi.XYIMOnReceiveMessageListener;
+import com.xiaoying.imapi.XYIMResultCallback;
 import com.xiaoying.imapi.XYIMUserInfo;
 import com.xiaoying.imapi.XYOperationCallback;
 import com.xiaoying.imapi.api.BusEvent;
@@ -12,7 +13,6 @@ import com.xiaoying.imapi.service.IMService;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
-import android.os.Message;
 import android.support.v4.app.Fragment;
 import android.util.Log;
 import android.view.Gravity;
@@ -27,12 +27,11 @@ import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import io.rong.listener.XYIMResultCallbackImpl;
 import io.rong.listener.XYIMSendMessageCallbackImpl;
 import io.rong.liveapp.GiftMessage;
 import io.rong.liveapp.R;
 import io.rong.ui.adapter.LiveChatListAdapter;
-import io.rong.ui.message.XYInformationNotificationMessage;
+import com.xiaoying.imapi.message.XYInformationNotificationMessage;
 import io.rong.util.IMUtil;
 
 public class LiveChatRoomFragment extends Fragment implements XYIMOnReceiveMessageListener, Handler.Callback {
@@ -97,7 +96,17 @@ public class LiveChatRoomFragment extends Fragment implements XYIMOnReceiveMessa
                 Log.d(TAG, "infoText = " + infoText);
                 XYInformationNotificationMessage content = XYInformationNotificationMessage.obtain(infoText);
                 XYMessage msg = XYMessage.obtain(targetId, conversationType, content);
-                imService.sendMessage(msg, new XYIMSendMessageCallbackImpl(msg), new XYIMResultCallbackImpl());
+                imService.sendMessage(msg, new XYIMSendMessageCallbackImpl(msg), new XYIMResultCallback<XYMessage>() {
+                    @Override
+                    public void onSuccess(XYMessage message) {
+                        Log.d(TAG, "message:" + message.getContent());
+                    }
+
+                    @Override
+                    public void onError(ErrorCode var1) {
+
+                    }
+                });
             }
 
             @Override
@@ -266,7 +275,17 @@ public class LiveChatRoomFragment extends Fragment implements XYIMOnReceiveMessa
         String type = Integer.toString(msg.what);
         XYMessage message = XYMessage.obtain(targetId, conversationType, new GiftMessage(type));
         message.getContent().setUserInfo(imService.getCurrentUserInfo());
-        imService.sendMessage(message, new XYIMSendMessageCallbackImpl(message), new XYIMResultCallbackImpl());
+        imService.sendMessage(message, new XYIMSendMessageCallbackImpl(message), new XYIMResultCallback<XYMessage>() {
+            @Override
+            public void onSuccess(XYMessage message) {
+                Log.d(TAG, "messsage:" + message.getContent());
+            }
+
+            @Override
+            public void onError(ErrorCode var1) {
+
+            }
+        });
         return false;
     }
 

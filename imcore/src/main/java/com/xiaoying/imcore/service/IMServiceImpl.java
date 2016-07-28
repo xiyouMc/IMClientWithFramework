@@ -11,6 +11,7 @@ import com.xiaoying.imapi.XYOperationCallback;
 import com.xiaoying.imapi.api.UserInfoProvider;
 import com.xiaoying.imapi.message.XYMessage;
 import com.xiaoying.imapi.message.XYMessageContent;
+import com.xiaoying.imapi.model.ErrorCode;
 import com.xiaoying.imapi.service.IMService;
 import com.xiaoying.imcore.livekit.RongIM;
 
@@ -80,7 +81,7 @@ public class IMServiceImpl implements IMService {
     }
 
     @Override
-    public void sendMessage(final XYMessage msg, XYIMSendMessageCallback callback, XYIMResultCallback result) {
+    public void sendMessage(final XYMessage msg, XYIMSendMessageCallback callback, final XYIMResultCallback<XYMessage> result) {
         RongIM.getInstance().sendMessage(Message.obtain(msg.getTargetId(), Conversation.ConversationType.setValue(msg.getConversationType().getValue()), new MessageContent() {
             XYMessageContent mContent = msg.getContent();
 
@@ -98,7 +99,17 @@ public class IMServiceImpl implements IMService {
             public void writeToParcel(Parcel parcel, int i) {
                 mContent.writeToParcel(parcel, i);
             }
-        }), callback, result);
+        }), callback, new XYIMResultCallback<Message>() {
+            @Override
+            public void onSuccess(XYMessage message) {
+                result.onSuccess(message);
+            }
+
+            @Override
+            public void onError(ErrorCode var1) {
+                result.onError(var1);
+            }
+        });
     }
 
     @Override

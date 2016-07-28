@@ -98,4 +98,9 @@ public class PersistMessage extends XYMessageContent {
             return new PersistMessage[size];
         }
     };
+
+    @Override
+    public String getMessage() {
+        return content;
+    }
 }

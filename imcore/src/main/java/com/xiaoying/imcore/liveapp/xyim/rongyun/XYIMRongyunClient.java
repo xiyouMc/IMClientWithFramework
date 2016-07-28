@@ -82,8 +82,30 @@ public class XYIMRongyunClient extends XYIMAbstractClient {
         };
         RongIMClient.ResultCallback<Message> result = new RongIMClient.ResultCallback<Message>() {
             @Override
-            public void onSuccess(Message message) {
-                resultCallback.onSuccess(message);
+            public void onSuccess(final Message message) {
+                resultCallback.onSuccess(XYMessage.obtain(message.getTargetId(), XYConversationType.setValue(message.getConversationType().getValue()), new XYMessageContent() {
+                    MessageContent mContent = message.getContent();
+
+                    @Override
+                    public byte[] encode() {
+                        return mContent.encode();
+                    }
+
+                    @Override
+                    public int describeContents() {
+                        return mContent.describeContents();
+                    }
+
+                    @Override
+                    public void writeToParcel(Parcel parcel, int i) {
+                        mContent.writeToParcel(parcel, i);
+                    }
+
+                    @Override
+                    public String getMessage() {
+                        return null;
+                    }
+                }));
             }
 
             @Override
@@ -91,23 +113,10 @@ public class XYIMRongyunClient extends XYIMAbstractClient {
                 resultCallback.onError(ErrorCode.valueOf(e.getValue()));
             }
         };
-        RongIMClient.getInstance().sendMessage(Message.obtain(message.getTargetId(), Conversation.ConversationType.setValue(message.getConversationType().getValue()),
-                new MessageContent() {
-                    @Override
-                    public byte[] encode() {
-                        return message.getContent().encode();
-                    }
-
-                    @Override
-                    public int describeContents() {
-                        return message.getContent().describeContents();
-                    }
-
-                    @Override
-                    public void writeToParcel(Parcel parcel, int i) {
-                        message.getContent().writeToParcel(parcel, i);
-                    }
-                }), null, null, callback, result);
+        RongMessage rongMessage = RongMessage.obtain(message.getContent().getMessage());
+        Message msg = Message.obtain(message.getTargetId(), Conversation.ConversationType.setValue(message.getConversationType().getValue()),
+                rongMessage);
+        RongIMClient.getInstance().sendMessage(msg, null, null, callback, result);
     }
 
     @Override
@@ -136,6 +145,11 @@ public class XYIMRongyunClient extends XYIMAbstractClient {
                     @Override
                     public void writeToParcel(Parcel parcel, int i) {
                         mContent.writeToParcel(parcel, i);
+                    }
+
+                    @Override
+                    public String getMessage() {
+                        return null;
                     }
                 }), left);
                 return false;

@@ -1,8 +1,7 @@
 package io.rong.util;
 
-import com.dynamicload.framework.framework.VivaApplication;
-import com.dynamicload.framework.framework.api.MicroApplicationContext;
 import com.xiaoying.imapi.service.IMService;
+import com.xiaoying.imcore.service.IMServiceImpl;
 
 import de.greenrobot.event.EventBus;
 
@@ -14,13 +13,14 @@ public class IMUtil {
 
     private static EventBus eventBus;
 
-    public static MicroApplicationContext getMicroApplicationContext() {
-        return VivaApplication.getInstance().getMicroApplicationContext();
-    }
+//    public static MicroApplicationContext getMicroApplicationContext() {
+//        return VivaApplication.getInstance().getMicroApplicationContext();
+//    }
 
     public static IMService getIMService() {
         if (imService == null) {
-            imService = getMicroApplicationContext().findServiceByInterface(IMService.class.getName());
+//            imService = getMicroApplicationContext().findServiceByInterface(IMService.class.getName());
+            imService = new IMServiceImpl();
         }
         return imService;
     }

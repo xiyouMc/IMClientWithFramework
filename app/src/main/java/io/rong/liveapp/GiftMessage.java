@@ -117,4 +117,8 @@ public class GiftMessage extends XYMessageContent {
         this.type = type;
     }
 
+    @Override
+    public String getMessage() {
+        return content;
+    }
 }

@@ -153,6 +153,11 @@ public class RongIM {
             public void writeToParcel(Parcel parcel, int i) {
                 mContent.writeToParcel(parcel, i);
             }
+
+            @Override
+            public String getMessage() {
+                return null;
+            }
         }), null, null, callback, result);
     }
 

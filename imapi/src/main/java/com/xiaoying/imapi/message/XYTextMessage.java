@@ -143,4 +143,9 @@ public class XYTextMessage extends XYMessageContent {
     public String getContent() {
         return this.content;
     }
+
+    @Override
+    public String getMessage() {
+        return this.content;
+    }
 }

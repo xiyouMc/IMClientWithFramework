@@ -110,5 +110,7 @@ public abstract class XYMessageContent implements Parcelable {
             }
         }
     }
+
+    public abstract String getMessage();
 }
 

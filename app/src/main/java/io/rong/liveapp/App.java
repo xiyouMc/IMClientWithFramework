@@ -1,6 +1,6 @@
 package io.rong.liveapp;
 
-import com.dynamicload.framework.util.FrameworkUtil;
+//import com.dynamicload.framework.util.FrameworkUtil;
 import com.xiaoying.imapi.XYIMOnReceiveMessageListener;
 import com.xiaoying.imapi.api.BusEvent;
 import com.xiaoying.imapi.message.XYMessage;
@@ -25,8 +25,8 @@ public class App extends Application {
     public void onCreate() {
         super.onCreate();
         if (!isIint) {
-            FrameworkUtil.setContext(this);
-            FrameworkUtil.prepare();
+//            FrameworkUtil.setContext(this);
+//            FrameworkUtil.prepare();
             imService = IMUtil.getIMService();
             isIint = true;
         }

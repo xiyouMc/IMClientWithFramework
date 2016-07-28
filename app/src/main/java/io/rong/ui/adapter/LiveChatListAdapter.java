@@ -58,7 +58,7 @@ public class LiveChatListAdapter extends BaseAdapter {
         }
 
         XYMessage msg = data.getMessage();
-        IMService imService = IMUtil.getMicroApplicationContext().findServiceByInterface(IMService.class.getName());
+        IMService imService = IMUtil.getIMService();
         if (imService == null) {
             return null;
         }

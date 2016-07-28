@@ -98,4 +98,9 @@ public class NoneMessage extends XYMessageContent {
             return new NoneMessage[size];
         }
     };
+
+    @Override
+    public String getMessage() {
+        return content;
+    }
 }

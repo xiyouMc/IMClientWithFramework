@@ -1,7 +1,5 @@
-package io.rong.ui.message;
+package com.xiaoying.imcore.liveapp.xyim.rongyun;
 
-import com.xiaoying.imapi.XYIMUserInfo;
-import com.xiaoying.imapi.message.XYMessageContent;
 import com.xiaoying.imapi.util.XYParcelUtils;
 
 import org.json.JSONException;
@@ -13,20 +11,26 @@ import android.util.Log;
 
 import java.io.UnsupportedEncodingException;
 
+import io.rong.common.ParcelUtils;
+import io.rong.imlib.MessageTag;
+import io.rong.imlib.model.MessageContent;
+import io.rong.imlib.model.UserInfo;
+
 /**
  * Created by xiyoumc on 16/7/27.
  */
-public class XYInformationNotificationMessage extends XYMessageContent {
+@MessageTag(value = "RC:RongMsg", flag = MessageTag.STATUS)
+public class RongMessage extends MessageContent {
     private static final String TAG = "InformationNotificationMessage";
     private String message;
     protected String extra;
-    public static final Creator<XYInformationNotificationMessage> CREATOR = new Creator() {
-        public XYInformationNotificationMessage createFromParcel(Parcel source) {
-            return new XYInformationNotificationMessage(source);
+    public static final Creator<RongMessage> CREATOR = new Creator() {
+        public RongMessage createFromParcel(Parcel source) {
+            return new RongMessage(source);
         }
 
-        public XYInformationNotificationMessage[] newArray(int size) {
-            return new XYInformationNotificationMessage[size];
+        public RongMessage[] newArray(int size) {
+            return new RongMessage[size];
         }
     };
 
@@ -57,16 +61,16 @@ public class XYInformationNotificationMessage extends XYMessageContent {
         }
     }
 
-    protected XYInformationNotificationMessage() {
+    protected RongMessage() {
     }
 
-    public static XYInformationNotificationMessage obtain(String message) {
-        XYInformationNotificationMessage model = new XYInformationNotificationMessage();
+    public static RongMessage obtain(String message) {
+        RongMessage model = new RongMessage();
         model.setMessage(message);
         return model;
     }
 
-    public XYInformationNotificationMessage(byte[] data) {
+    public RongMessage(byte[] data) {
         String jsonStr = null;
 
         try {
@@ -104,13 +108,13 @@ public class XYInformationNotificationMessage extends XYMessageContent {
         XYParcelUtils.writeToParcel(dest, this.getUserInfo());
     }
 
-    public XYInformationNotificationMessage(Parcel in) {
+    public RongMessage(Parcel in) {
         this.setMessage(XYParcelUtils.readFromParcel(in));
         this.setExtra(XYParcelUtils.readFromParcel(in));
-        this.setUserInfo((XYIMUserInfo) XYParcelUtils.readFromParcel(in, XYIMUserInfo.class));
+        this.setUserInfo((UserInfo) ParcelUtils.readFromParcel(in, UserInfo.class));
     }
 
-    public XYInformationNotificationMessage(String message) {
+    public RongMessage(String message) {
         this.setMessage(message);
     }
 
