@@ -53,6 +53,7 @@ public class App extends Application {
                     imService.registerMessageType(XYInformationNotificationMessage.class);
                     imService.registerMessageType(XYTextMessage.class);
                     imService.registerMessageTemplate(new TextMessageTemplate());
+                    imService.registerMessageTemplate(new RongMessageTemplate());
                     imService.registerMessageTemplate(new InformationNotificationMessageTemplate());
                     imService.registerMessageEvent(new XYIMOnReceiveMessageListener() {
                         @Override

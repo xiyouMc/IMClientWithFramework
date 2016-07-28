@@ -1,4 +1,4 @@
-package io.rong.template;
+package io.rong.liveapp;
 
 import com.xiaoying.imapi.BaseMessageTemplate;
 import com.xiaoying.imapi.XYIMUserInfo;
@@ -7,6 +7,7 @@ import com.xiaoying.imapi.message.UIMessage;
 import com.xiaoying.imapi.message.XYEmoji;
 import com.xiaoying.imapi.message.XYMessage;
 import com.xiaoying.imapi.message.XYTextMessage;
+import com.xiaoying.imcore.liveapp.xyim.rongyun.XYIMRongyunClient;
 
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -14,10 +15,11 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import io.rong.liveapp.R;
-
-@TemplateTag(messageContent = XYTextMessage.class)
-public class TextMessageTemplate implements BaseMessageTemplate {
+/**
+ * Created by xiyoumc on 16/7/28.
+ */
+@TemplateTag(messageContent = XYIMRongyunClient.class)
+public class RongMessageTemplate implements BaseMessageTemplate {
     private final static String TAG = "TextMessageTemplate";
 
     @Override

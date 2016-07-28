@@ -3,6 +3,7 @@ package io.rong.ui.adapter;
 import com.xiaoying.imapi.BaseMessageTemplate;
 import com.xiaoying.imapi.message.UIMessage;
 import com.xiaoying.imapi.message.XYMessage;
+import com.xiaoying.imapi.message.XYTextMessage;
 import com.xiaoying.imapi.service.IMService;
 
 import android.util.Log;
@@ -62,7 +63,7 @@ public class LiveChatListAdapter extends BaseAdapter {
         if (imService == null) {
             return null;
         }
-        final BaseMessageTemplate template = imService.getMessageTemplate(msg.getContent().getClass());
+        final BaseMessageTemplate template = imService.getMessageTemplate(XYTextMessage.class);
         if (template != null) {
             View view = holder.baseContainerView.inflate(template, position, msg.getObjectName(), data);
             view.setOnClickListener(new View.OnClickListener() {
