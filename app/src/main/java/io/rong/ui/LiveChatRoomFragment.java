@@ -160,6 +160,27 @@ public class LiveChatRoomFragment extends Fragment implements XYIMOnReceiveMessa
 //                imService.sendMessage(message, new XYIMSendMessageCallbackImpl(message), new XYIMResultCallbackImpl());
 //            }
 //
+
+//        private void setEmoticonBoard() {
+//            if(this.emoticonView != null) {
+//                if(this.emoticonView.getVisibility() == 0) {
+//                    this.emoticonView.setVisibility(8);
+//                } else {
+//                    this.emoticonView.setVisibility(0);
+//                    this.containerLayout.setSelected(true);
+//                }
+//            } else {
+//                this.emoticonView = new EmoticonView(this.getContext());
+//                this.emoticonView.setVisibility(0);
+//                this.emoticonView.setOnEmoticonClickListener(this.emoticonSelectedListener);
+//                this.containerLayout.setSelected(true);
+//                this.addView(this.emoticonView);
+//                this.emoticonView.setTableViewEnable(this.enableTableBar);
+//                this.emoticonView.init();
+//            }
+//
+//        }
+
 //            @Override
 //            public void onEditTextClick(EditText editText) {
 //            }
