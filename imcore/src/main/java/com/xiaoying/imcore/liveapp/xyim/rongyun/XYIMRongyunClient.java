@@ -19,6 +19,7 @@ import io.rong.imlib.RongIMClient;
 import io.rong.imlib.model.Conversation;
 import io.rong.imlib.model.Message;
 import io.rong.imlib.model.MessageContent;
+import io.rong.message.TextMessage;
 
 /**
  * Created by Administrator on 2016/6/7.
@@ -118,9 +119,10 @@ public class XYIMRongyunClient extends XYIMAbstractClient {
                 resultCallback.onError(ErrorCode.valueOf(e.getValue()));
             }
         };
-        RongMessage rongMessage = RongMessage.obtain(message.getContent().getMessage());
+        TextMessage textMessage = TextMessage.obtain(message.getContent().getMessage());
+//        RongMessage rongMessage = RongMessage.obtain(message.getContent().getMessage());
         Message msg = Message.obtain(message.getTargetId(), Conversation.ConversationType.setValue(message.getConversationType().getValue()),
-                rongMessage);
+                textMessage);
         RongIMClient.getInstance().sendMessage(msg, null, null, callback, result);
     }
 
@@ -135,8 +137,8 @@ public class XYIMRongyunClient extends XYIMAbstractClient {
             @Override
             public boolean onReceived(final Message message, int left) {
 
-                RongMessage textMsg = (RongMessage) message.getContent();
-                CharSequence text = XYEmoji.ensure(context, textMsg.getMessage());
+                TextMessage textMsg = (TextMessage) message.getContent();
+                CharSequence text = XYEmoji.ensure(context, textMsg.getContent());
                 XYTextMessage xyTextMessage = XYTextMessage.obtain(text.toString());
                 final XYMessage msg = XYMessage.obtain(message.getTargetId(), XYConversationType.setValue(message.getConversationType().getValue()), xyTextMessage);
                 msg.setSenderUserId(message.getSenderUserId());
