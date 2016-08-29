@@ -72,7 +72,9 @@ public class RongIM {
         Uri uri = Uri.parse("rong://" + context.getApplicationInfo().processName).buildUpon()
                 .appendPath("conversation").appendPath(conversationType.getName().toLowerCase())
                 .appendQueryParameter("targetId", targetId).appendQueryParameter("liveUrl", liveUrl).build();
-        context.startActivity(new Intent(Intent.ACTION_VIEW, uri));
+        Intent intent = new Intent(Intent.ACTION_VIEW, uri);
+        intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+        context.startActivity(intent);
     }
 
     public void registerMessageType(Class<? extends MessageContent> messageContentClass) {
