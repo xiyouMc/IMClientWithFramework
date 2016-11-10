@@ -19,4 +19,6 @@ public abstract class XYIMAbstractClient {
     abstract public void sendMessage(XYMessage message, String pushContent, String pushData, XYIMSendMessageCallback callback, XYIMResultCallback resultCallback);
 
     abstract public void setOnReceiveMessageListener(XYIMOnReceiveMessageListener listener);
+
+    abstract public void getChatRoomInfo(String chatRoomId, boolean asc, XYChatRoomCallback chatRoomCallback);
 }

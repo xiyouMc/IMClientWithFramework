@@ -1,6 +1,7 @@
 package com.xiaoying.imcore.service;
 
 import com.xiaoying.imapi.BaseMessageTemplate;
+import com.xiaoying.imapi.XYChatRoomCallback;
 import com.xiaoying.imapi.XYConversationType;
 import com.xiaoying.imapi.XYIMConnectCallback;
 import com.xiaoying.imapi.XYIMOnReceiveMessageListener;
@@ -119,5 +120,10 @@ public class IMServiceImpl implements IMService {
 //                callback.onError(errorCode);
             }
         });
+    }
+
+    @Override
+    public void getChatRoomInfo(String chatroomId, boolean asc, XYChatRoomCallback chatRoomCallback) {
+        RongIM.getInstance().getChatRoomInfo(chatroomId, asc, chatRoomCallback);
     }
 }

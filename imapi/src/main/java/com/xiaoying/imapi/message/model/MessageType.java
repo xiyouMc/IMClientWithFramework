@@ -13,5 +13,5 @@ public class MessageType {
     public static final String IN_LIVE_MSG = "101";
     public static final String LIKE = "102";
     public static final String KICK_OUT = "103";
-
+    public static final String EXIT_LIVE_MSG = "104";
 }

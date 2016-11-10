@@ -1,6 +1,7 @@
 package com.xiaoying.imcore.livekit;
 
 import com.xiaoying.imapi.BaseMessageTemplate;
+import com.xiaoying.imapi.XYChatRoomCallback;
 import com.xiaoying.imapi.XYIMAbstractClient;
 import com.xiaoying.imapi.XYIMConnectCallback;
 import com.xiaoying.imapi.XYIMOnReceiveMessageListener;
@@ -71,7 +72,8 @@ public class RongIM {
     public void startConversation(Context context, Conversation.ConversationType conversationType, String targetId, String liveUrl) {
         Uri uri = Uri.parse("rong://" + context.getApplicationInfo().processName).buildUpon()
                 .appendPath("conversation").appendPath(conversationType.getName().toLowerCase())
-                .appendQueryParameter("targetId", targetId).appendQueryParameter("liveUrl", liveUrl).build();
+                .appendQueryParameter("targetId", targetId).appendQueryParameter("liveUrl", liveUrl)
+                .build();
         Intent intent = new Intent(Intent.ACTION_VIEW, uri);
         intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
         context.startActivity(intent);
@@ -150,5 +152,9 @@ public class RongIM {
 //        }
                 listener
         );
+    }
+
+    public void getChatRoomInfo(String chatRoomId, boolean asc, XYChatRoomCallback chatRoomCallback) {
+        mXYIMAbstractClient.getChatRoomInfo(chatRoomId, asc, chatRoomCallback);
     }
 }

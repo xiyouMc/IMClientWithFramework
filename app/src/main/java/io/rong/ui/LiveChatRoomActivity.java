@@ -28,6 +28,7 @@ public class LiveChatRoomActivity extends FragmentActivity {
         mIMService.setUserInfoProvider(new UserInfoProvider() {
             @Override
             public XYIMUserInfo getUserInfo(String userId) {
+
                 return mIMService.getCurrentUserInfo();
             }
         });

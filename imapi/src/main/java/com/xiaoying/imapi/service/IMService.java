@@ -1,6 +1,7 @@
 package com.xiaoying.imapi.service;
 
 import com.xiaoying.imapi.BaseMessageTemplate;
+import com.xiaoying.imapi.XYChatRoomCallback;
 import com.xiaoying.imapi.XYConversationType;
 import com.xiaoying.imapi.XYIMConnectCallback;
 import com.xiaoying.imapi.XYIMOnReceiveMessageListener;
@@ -102,4 +103,5 @@ public interface IMService {
      */
     void joinChatRoom(final String chatroomId, final int defMessageCount, final XYOperationCallback callback);
 
+    void getChatRoomInfo(String chatroomId, boolean asc, XYChatRoomCallback chatRoomCallback);
 }

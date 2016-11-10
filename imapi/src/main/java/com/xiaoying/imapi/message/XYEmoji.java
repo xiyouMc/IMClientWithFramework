@@ -94,7 +94,7 @@ public class XYEmoji {
                         isSurrogatePair = false;
                     }
 
-                    if (emojiMap.containsKey(Integer.valueOf(codePoint))) {
+                    if (emojiMap != null && emojiMap.containsKey(Integer.valueOf(codePoint))) {
                         ssb.setSpan(new XYEmoji.EmojiImageSpan(context, codePoint), isSurrogatePair ? i - 1 : i, i + 1, 33);
                     }
                 }

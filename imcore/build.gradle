@@ -23,7 +23,7 @@ apply plugin: 'signing'
 
 //定义GroupID和Version，ArtefactID会自动使用Project名
 group = 'com.vivavideo.mobile'
-version = '1.39.16829'
+version = '1.39.16101902'
 
 artifacts {
     archives file('build/libs/' + project.name + '.jar')
@@ -96,7 +96,7 @@ buildscript {
         mavenCentral()
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:2.1.2'
+        classpath 'com.android.tools.build:gradle:2.1.3'
     }
 }
 
@@ -116,11 +116,12 @@ allprojects {
 }
 
 dependencies {
-//    provided fileTree(dir: 'libs', include: ['*.jar'])
+    //    provided fileTree(dir: 'libs', include: ['*.jar'])
     compile 'com.android.support:appcompat-v7:22.1.0'
-//    provided 'com.dynamicload.framework:framework:4.2.160721'
+    //    provided 'com.dynamicload.framework:framework:4.2.160721'
     compile files('libs/ToolKit.jar')
-    provided 'com.vivavideo.mobile:imapi:1.61.16728'
-//    provided project(':imapi')
-//    provided files('libs/eventbus-2.4.0.jar')
+    provided 'com.vivavideo.mobile:imapi:1.61.16101901'
+//        provided project(':imapi')
+    //    provided files('libs/eventbus-2.4.0.jar')
+//    compile files('libs/Rong_IMLib_v2_7_2.jar')
 }

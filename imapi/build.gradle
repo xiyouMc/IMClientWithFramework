@@ -18,13 +18,12 @@ android {
     }
 }
 
-
 apply plugin: 'maven'
 apply plugin: 'signing'
 
 //定义GroupID和Version，ArtefactID会自动使用Project名
 group = 'com.vivavideo.mobile'
-version = '1.61.168201'
+version = '1.61.16101901'
 
 artifacts {
     archives file('build/libs/' + project.name + '.jar')
@@ -97,7 +96,7 @@ buildscript {
         mavenCentral()
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:2.1.2'
+        classpath 'com.android.tools.build:gradle:2.1.3'
     }
 }
 

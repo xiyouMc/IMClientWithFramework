@@ -1,5 +1,6 @@
 package com.xiaoying.imcore.liveapp.xyim.rongyun;
 
+import com.xiaoying.imapi.XYChatRoomCallback;
 import com.xiaoying.imapi.XYConversationType;
 import com.xiaoying.imapi.XYIMAbstractClient;
 import com.xiaoying.imapi.XYIMConnectCallback;
@@ -15,7 +16,12 @@ import com.xiaoying.imapi.model.ErrorCode;
 import android.content.Context;
 import android.os.Parcel;
 
+import java.util.LinkedList;
+import java.util.List;
+
 import io.rong.imlib.RongIMClient;
+import io.rong.imlib.model.ChatRoomInfo;
+import io.rong.imlib.model.ChatRoomMemberInfo;
 import io.rong.imlib.model.Conversation;
 import io.rong.imlib.model.Message;
 import io.rong.imlib.model.MessageContent;
@@ -156,5 +162,41 @@ public class XYIMRongyunClient extends XYIMAbstractClient {
                 return false;
             }
         });
+    }
+
+    @Override
+    public void getChatRoomInfo(String chatRoomId, boolean asc, final XYChatRoomCallback chatRoomCallback) {
+        RongIMClientInstance.getChatRoomInfo(chatRoomId, 500, asc ? ChatRoomInfo.ChatRoomMemberOrder.RC_CHAT_ROOM_MEMBER_ASC : ChatRoomInfo.ChatRoomMemberOrder.RC_CHAT_ROOM_MEMBER_DESC,
+                new RongIMClient.ResultCallback<ChatRoomInfo>() {
+                    @Override
+                    public void onFail(int errorCode) {
+                        super.onFail(errorCode);
+                    }
+
+                    @Override
+                    public void onFail(RongIMClient.ErrorCode errorCode) {
+                        super.onFail(errorCode);
+                    }
+
+                    @Override
+                    public void onCallback(ChatRoomInfo chatRoomInfo) {
+                        super.onCallback(chatRoomInfo);
+                    }
+
+                    @Override
+                    public void onSuccess(ChatRoomInfo chatRoomInfo) {
+                        List<ChatRoomMemberInfo> chatRoomMemberInfoList = chatRoomInfo.getMemberInfo();
+                        List<String> listUser = new LinkedList<String>();
+                        for (ChatRoomMemberInfo memberInfo : chatRoomMemberInfoList) {
+                            listUser.add(memberInfo.getUserId());
+                        }
+                        chatRoomCallback.onChatRoomUser(listUser);
+                    }
+
+                    @Override
+                    public void onError(RongIMClient.ErrorCode errorCode) {
+
+                    }
+                });
     }
 }
