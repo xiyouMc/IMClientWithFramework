@@ -1,11 +1,16 @@
 
-# IMSDk
-基于Rongyun的即时通讯SDK
+# IMSDK
+基于融云的即时通讯SDK
 
 
 ## Dependency
 
 ```
+repositories {
+    maven {
+        url "http://192.168.1.3:8081/nexus/content/repositories/VivaVideo/"
+    }
+}
 dependencies{
      compile 'com.vivavideo.mobile:imapi:1.61.16101901@aar'
      compile 'com.vivavideo.mobile:imcore:1.39.16101902@aar'
@@ -68,12 +73,14 @@ if (imService != null) {
 ```
 
 * Step 3---------连接服务
+
 ```
 imService.connect(TOKEN,XYIMConnectCallback);
 imService.setCurrentUserInfo(new XYIMUserInfo(userId,userName,portraitUrl));
 ```
 
 * Step 4---------构造消息(XYMessage)并发送
+
 ```
 XYTextMessage content = XYTextMessage.obtain(text);
 XYMessage msg = XYMessage.obtain(targetId, XYConversationType, content);
@@ -87,6 +94,7 @@ imService.sendMessage(msg,new IMSendMessageCallback(),new XYIMResultCallback<XYM
 ```
 
 * Step 5--------接受消息
+
 ```
 通过之前注册的XYIMOnReceiveMessageListener处理。
 ```
